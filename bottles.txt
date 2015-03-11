@@ -232,4 +232,21 @@
 %user% found a message in a bottle! It turns out to be a twilight fanfic. You attempt to launch it into orbit but fail. In horror you find yourself looking at a little blue dot. You die
 %user% found a message in a bottle! It turns out to be a manuscript. After examining it you decide the world is better off without it and proceed to destroy the book and spend your remaining days hunting the writer down to finish the job
 %user% found a message in a bottle! Inside is only a old photo of some hikers in the alps. 40 minutes later you are [Redacted] by a strange creature. You are ████
-%user% found a message in a bottle! Inside is a note written in complete gibberish. As time goes on, you find yourself slowly beginning to understand it. All the while, no one can understand you anymore.
+%user% found a message in a bottle! Inside is a note written in complete gibberish. As time goes on, you find yourself slowly beginning to understand it. All the while, no one can understand you anymore. 
+%user% found a message in a bottle! You attempt to open the bottle but it is snatched from you
+%user% found a message in a bottle! You open the bottle and begin to puke. You quickly die of radiation poisoning
+%user% found a message in a bottle! You hand the bottle to a friend. They open it and find a small gold bar inside. You get nothing
+%user% found a message in a bottle! You hand the bottle to a friend. They open it and find a small gold bar inside. They share it fairly
+%user% found a message in a bottle! An eagle swoops down and steals it from you
+%user% found a message in a bottle! A really angry man with a brittish accent begins yelling at you about the bottle. For some reason his specific voice only makes you laugh. He kills you 3 hours later
+%user% found a message in a bottle! You attempt to open the bottle but are distracted by the sudden appearance of a poodle humping your leg. You attempt to shoo it but it impossible. Eventually you accept your fate
+%user% found a message in a bottle! It says: "You already opened this bottle! Pick another one [!bottle]"
+%user% found a message in a bottle! It says: "Fuck you faggot"
+%user% found a message in a bottle! You attempt to pick up the bottle but for some reason it always slips from your grasp. You go home feeling unfufilled
+%user% found a message in a bottle! It says: "The user who maintains this factoid is an idiot"
+%user% found a message in a bottle! It contained a small handgun with the message "Kill yourself"
+%user% found a message in a bottle! The bottle was made of solid glass but otherwise unremarkable
+%user% found a message in a bottle! The message was impossible to remove and you give up
+%user% found a message in a bottle! The message was impossible to read and you give up
+%user% found a message in a bottle! The message was actually nothing, just a blank paper
+%user% found a message in a bottle! The bottle contained a fantastic but unfinished book. Soon after, you begin finding more bottles with later chapters. Eventually you begin looking forward to the update bottles
