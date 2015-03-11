@@ -1,6 +1,6 @@
 require('split')
 
-local s=net.get('https://gist.githubusercontent.com/dangranos/20a10d27ce2b2d591904/raw')
+local s=net.get('https://github.com/dangranos/shocky_bottle/raw/master/bottles.txt')
 local t = string.split(s,'\n')
 local r=math.random(1,#t)
 
