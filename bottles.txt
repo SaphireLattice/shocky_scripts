@@ -250,3 +250,7 @@
 %user% found a message in a bottle! The message was impossible to read and you give up
 %user% found a message in a bottle! The message was actually nothing, just a blank paper
 %user% found a message in a bottle! The bottle contained a fantastic but unfinished book. Soon after, you begin finding more bottles with later chapters. Eventually you begin looking forward to the update bottles
+%user% found a message in a bottle! It says: "%user% don't think, just run. They're coming for you."
+%user% found a message in a bottle! It says: "Don't react %user%. The man to your left is a hitman. If you are to live you need to follow my instructions carefully. Go home, there will be another bottle waiting with your next instructions."
+%user% found a message in a bottle! It says: "tamam shud"
+%user% found a message in a bottle! It says: "tamam shud" and you die instantly.
