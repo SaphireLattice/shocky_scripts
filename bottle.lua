@@ -1,4 +1,14 @@
-require('split')
+local string=string
+string.split = function(str, pattern)
+  pattern = pattern or "[^%s]+"
+  if pattern:len() == 0 then pattern = "[^%s]+" end
+  local parts = {__index = table.insert}
+  setmetatable(parts, parts)
+  str:gsub(pattern, parts)
+  setmetatable(parts, nil)
+  parts.__index = nil
+  return parts
+end
 
 local s=net.get('https://github.com/dangranos/shocky_bottle/raw/master/bottles.txt')
 local t = string.split(s,'\n')
