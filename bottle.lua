@@ -1,5 +1,4 @@
-local string=string
-string.split = function(str, pattern)
+local split = function(str, pattern)
   pattern = pattern or "[^%s]+"
   if pattern:len() == 0 then pattern = "[^%s]+" end
   local parts = {__index = table.insert}
@@ -11,7 +10,7 @@ string.split = function(str, pattern)
 end
 
 local s=net.get('https://github.com/dangranos/shocky_bottle/raw/master/bottles.txt')
-local t = string.split(s,'\n')
+local t = split(s,'\n')
 local r=math.random(1,#t)
 
 if argc>=1 then
