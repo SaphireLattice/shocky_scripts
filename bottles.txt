@@ -254,3 +254,26 @@
 %user% found a message in a bottle! It says: "Don't react %user%. The man to your left is a hitman. If you are to live you need to follow my instructions carefully. Go home, there will be another bottle waiting with your next instructions."
 %user% found a message in a bottle! It says: "tamam shud"
 %user% found a message in a bottle! It says: "tamam shud" and you die instantly.
+%user% found a message in a bottle! One thing lead to another and you're now the captain of SS Bänkt
+%user% found a message in a bottle! It contained a map to Fort Kickass. No girls allowed
+%user% found a message in a bottle! It contained a map to Fort Kickass. No boys allowed
+%user% found a message in a bottle! It contained a map to Fort Kickass. Clothing is optional
+%user% found a message in a bottle! It contained a map to Fort Kickass. It was occupied by the enemy. You painted the walls red
+%user% found a message in a bottle! One thing led to another and you're now part of a giant
+%user% found a message in a bottle! One thing led to another and you're now part of a dinosaur themed robot team
+%user% found a message in a bottle! Upon further inspection, you realize there is a Troll behind you. You are not Immune
+%user% found a message in a bottle! The voices tell you to burn everything
+%user% found a message in a bottle! The voices tell you to burn %rndn%
+%user% found a message in a bottle! It turns out to be a really clever advertisement for a webcomic
+%user% found a message in a bottle! It is a recipe for hair sparkles!
+%user% found a message in a bottle! It is a recipe for death in a jar!
+%user% found a message in a bottle! It is a recipe for hate!
+%user% found a message in a bottle! It is a recipe for unicorn farts!
+%user% found a message in a bottle! It is a recipe for apple pie!
+%user% found a message in a bottle! The bottle fell from the sky - which would have been great, for you needed a container to keep your cookies in - but it shatters on impact
+%user% found a message in a bottle! The bottle fell from the sky and hit your head. You die instantly
+%user% found a message in a bottle! The bottle fell from the sky and exploded on contact with the ground. The released toxins kill you swiftly
+%user% found a message in a bottle! The bottle fell from the sky and landed intact at your feet. It had a small note saying "Look out below!"
+%user% found a message in a bottle! Attempting to read it you find yourself now trapped in the bottle
+%user% found a message in a bottle! A small winged creature flies out and thanks you before vanishing
+%user% found a message in a bottle! Touching the bottle sends a chill down your spine. You choose to ignore it but it's too late and the curse has already taken hold. You die
