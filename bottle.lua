@@ -18,7 +18,7 @@ local function split(str, pat)
 end
 
 local s=net.get('https://github.com/dangranos/shocky_bottle/raw/master/bottles.txt')
-local sc=net.get('https://github.com/dangranos/shocky_bottle/raw/master/bottles_'..(channel.name or "")..'.txt')
+local sc=net.get('https://github.com/dangranos/shocky_bottle/raw/master/bottles_'..net.url((channel.name or ""))..'.txt')
 if sc then
     s = s..sc
 end
