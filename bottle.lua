@@ -26,15 +26,15 @@ local t = split(s,'\n')
 local r=math.random(1,#t)
 
 if argc>=1 then
-	if string.lower(arg[1]) == "help" then
+	if string.lower(arg[1]) == "-help" then
 		print("A simple RNG that produces a message in a bottle. Use a positive number for a specific bottle or use keywords to find the first bottle containing the keywords. Use listcommands to list all commands.")
 		return
 	end
-	if string.lower(arg[1]) == "listcommands" then
+	if string.lower(arg[1]) == "-listcommands" then
 		print("help : Displays help prompt | find <keywords> : List bottles containing <keywords> | count : Lists total number of bottles")
 		return
 	end
-	if string.lower(arg[1]) == "count" then
+	if string.lower(arg[1]) == "-count" then
 		local count = #t
 		local cby = ""
 
@@ -45,7 +45,7 @@ if argc>=1 then
 		print(count.." entr"..mnt.." present"..cby)
 		return
 	end
-	if string.lower(arg[1]) == "find" then
+	if string.lower(arg[1]) == "-find" then
 		local numt = {}
 		for i,l in pairs(t) do
 			local hf2 = true
