@@ -204,7 +204,7 @@
 %user% found a message in a bottle! One thing leads to another and now you're treading water on a raft made out of beer bottles
 %user% found a message in a bottle! One thing leads to another and now you know exactly how robust a bottle can be
 %user% found a message in a bottle! One thing leads to another and now you're picking up litter
-%user% found a message in a bottle! One thing leads to another and now your chasing three kids around as they suffer a series of unfortunate events.
+%user% found a message in a bottle! One thing leads to another and now you're chasing three kids around as they suffer a series of unfortunate events.
 %user% found a message in a bottle! It says: "You are NOT the father!"
 %user% found a message in a bottle! It says: "You are NOT the mother!"
 %user% found a message in a bottle! It says: "Who's your daddy?"
