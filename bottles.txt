@@ -277,3 +277,4 @@
 %user% found a message in a bottle! Attempting to read it you find yourself now trapped in the bottle
 %user% found a message in a bottle! A small winged creature flies out and thanks you before vanishing
 %user% found a message in a bottle! Touching the bottle sends a chill down your spine. You choose to ignore it but it's too late and the curse has already taken hold. You die
+%user% found a message in a bottle! It says: "Who's your mommy?"
