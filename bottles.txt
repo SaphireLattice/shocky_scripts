@@ -287,8 +287,8 @@
 %user% found a message in a bottle! You touch the bottle and are instantly transported to a futuristic world. It is ruled by a darker version of you. You are found and made their successor
 %user% found a message in a bottle! It says, "Excelsior!"
 %user% found a message in a bottle! A screaming voice rings out, "Excelsior!"
-%user% found a message in a bottle! Inside is the exact object you were looking for. You don't remember looking for it but now you have it. Later you ¦¦¦¦¦¦¦¦¦ leaving only the bottle.
-%user% found a message in a bottle! Subject is 23.37816cm tall, with a white water resistant paper containing information and logo consistent with the ¦¦¦¦¦¦¦¦¦¦¦¦¦¦ ¦¦¦¦¦¦¦¦¦ brand. ¦¦¦¦¦¦¦¦ has a memnatic effect forcing it's victim, henceforth refereed to as ¦¦¦¦¦¦¦¦-1 to ¦¦¦¦¦ uncontrollably
+%user% found a message in a bottle! Inside is the exact object you were looking for. You don't remember looking for it but now you have it. Later you █████████ leaving only the bottle.
+%user% found a message in a bottle! Subject is 23.37816cm tall, with a white water resistant paper containing information and logo consistent with the ██████████████ █████████ brand. ████████ has a memnatic effect forcing it's victim, henceforth refereed to as ████████-1 to █████ uncontrollably
 %user% found a message in a bottle! It says, "The end is nigh!"
 %user% found a message in a bottle! It contains your favorite soft drink
 %user% found a message in a bottle! It contains your favorite condiment
@@ -312,7 +312,7 @@
 %user% found a message in a bottle! Before even touching the bottle it begins speaking. You don't understand the language but catch the words "Fuck", "Mate", and "You" very clearly
 %user% found a message in a bottle! It says, "Fuck you, mate"
 %user% found a message in a bottle! Somehow you resist the urge to uncap it. Sadly it's too late and the curse has already taken hold. You die
-%user% found a message in a bottle! Somehow you resist the urge to uncap it. Sadly it's too late and the curse has already taken hold. You are patent zero, a zombie
+%user% found a message in a bottle! Somehow you resist the urge to uncap it. Sadly it's too late and the curse has already taken hold. You are patient zero, a zombie
 %user% found a message in a bottle! The bottle starts speaking and politely requests you to not snap it's head off like the others
 %user% found a message in a bottle! The bottle introduces it's self as James and you become fast friends
 %user% found a message in a bottle! The bottle introduces it's self as James and you become fast friends. That is, until you find James sleeping with your spouse and decide to drink that bastard dry
