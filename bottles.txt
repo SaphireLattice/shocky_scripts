@@ -303,8 +303,8 @@
 %user% found a message in a bottle! Upon touching the bottle you fall into a short coma. When you awaken you discover you have the power to fly. You become the hero
 %user% found a message in a bottle! Upon touching the bottle you fall into a short coma. When you awaken you discover you have the power to fly. You become the villain
 %user% found a message in a bottle! Upon touching the bottle you fall into a short coma. When you awaken you discover you have the power to fly. During your first flight you crash into an jetliner and die
-%user% found a message in a bottle! It says, "It'll be fun they said. It'll be easy the said. But look at me now, I'm a stinking paper in a bottle!"
-%user% found a message in a bottle! It says, "The cow says, 'Moooo'"
+%user% found a message in a bottle! It says: "It'll be fun they said. It'll be easy the said. But look at me now, I'm a stinking paper in a bottle!"
+%user% found a message in a bottle! It says: "The cow says, 'Moooo'"
 %user% found a message in a bottle! You run the fuck away, bottles are never good
 %user% found a message in a bottle! You carefully put it back and never look at it again
 %user% found a message in a bottle! A voice in your head warns you away and you leave it
@@ -325,6 +325,19 @@
 %user% found a message in a bottle! It turns out to be neither a message or a bottle. You've been drugged and are hallucinating. Tell the unicorns to go away
 %user% found a message in a bottle! "Daaaang, you ugly," says the bottle in a gravelly black man's voice before leaping from your hands
 %user% found a message in a bottle! "Hello %user%, I am god," speaks the bottle. You startle and drop the bottle, shattering it. You sweep it away and hope no one finds out what happened
-%user% found a message in a bottle! It says, "Suck a cock, OP"
-%user% found a message in a bottle! It says, "So, what you doing tonight babe?"
+%user% found a message in a bottle! It says: "Suck a cock, OP"
+%user% found a message in a bottle! It says: "So, what you doing tonight babe?"
 %user% found a message in a bottle! The bottle speaks and claims you are the chosen one and need to set off on a quest to destroy a great and powerful evil necromancer. You kindly decline and put the bottle back
+%user% found a message in a bottle! It says: "You ARE the drunken sailor"
+%user% found a message in a bottle! The earth cracks beneath you
+%user% found a message in a bottle! A terrible beast is summoned to your side
+%user% found a message in a bottle! A terrible beast is summoned to your side. You can not control it and it kills you
+%user% found a message in a bottle! A terrible beast is summoned to your side. You can not control it, but soon discover you don't need to. It grows to be far less terrible
+%user% found a message in a bottle! "I am a castaway on an island lost at sea. It's lonely, no one can hear me. So lonely. Rescue me before I fall into despair"
+%user% found a message in a bottle! The curse takes hold and the world seems to fade away. Later you awaken in the lap of a demon. Your relationship starts off rocky but eventually you two save the world
+%user% found a message in a bottle! The curse takes hold and the world seems to fade away. Later you awaken in the lap of a demon. Many adventures are had as the demon tries to fit into this world
+%user% found a message in a bottle! Curry powder explodes from the bottle. You are blinded
+%user% found a message in a bottle! One thing leads to another and now you're battling a demon with a fiddle
+%user% found a message in a bottle! Inside is a scrap of paper with strange words on it. You without realizing it read it out loud and discover you can control magic
+%user% found a message in a bottle! Time stops and then changes. You're not aware of what changes are taking place but you know your old life is over. A man appears next to you, "I've waited a long time to meet you. Are you ready?"
+%user% found a message in a bottle! It says: "If you're reading this, I am dead. The date is October 7th, 1948 and I am the last remaining survivor of the Tidal Raven cargo ship. I do not wish to be found, I do not need to be rescued. I simply want my family to know. Tell them I am sorry I didn't make it"
