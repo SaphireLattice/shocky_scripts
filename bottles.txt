@@ -1,5 +1,5 @@
 %user% found a test bottle! It says: "Fuck you TESTMONGER"
-%user% found a message in a bottle! It says: "Fuck you," signed %rndn%
+%user% found a message in a bottle! It says: "Fuck you," signed $odd(%rndn%)
 %user% found a message in a bottle! It says: "Fuck you %user%!"
 %user% found a message in a bottle! It says: "50% off your next purchase of pork product"
 %user% found a message in a bottle! It says: "DISHONOR ON YOU, DISHONOR ON YOUR FAMILY, DISHONOR ON YOUR COW!"
@@ -186,8 +186,8 @@
 %user% found a message in a bottle! Seconds after opening it, a glowing red powder wafts out. That was the last thing you remember in life
 %user% found a message in a bottle! The bottle breaks and your hands are covered in something resembling flour. You die
 %user% found a message in a bottle! After opening it you find yourself starting to laugh. You don't know why but now you can't stop. You die
-%user% found a message in a bottle! One thing leads to another and now you're traveling across the US with your little brother to hunt
-%user% found a message in a bottle! One thing leads to another and now you're traveling across the US with your older brother to hunt
+%user% found a message in a bottle! One thing leads to another and now you're traveling across the US with your little brother to hunt demons
+%user% found a message in a bottle! One thing leads to another and now you're traveling across the US with your older brother to hunt demons
 %user% found a message in a bottle! One thing leads to another and now you're sealing the deal with a kiss
 %user% found a message in a bottle! One thing leads to another and now you're in prison for murder
 %user% found a message in a bottle! One thing leads to another and now you're a god
@@ -210,10 +210,10 @@
 %user% found a message in a bottle! It says: "Who's your daddy?"
 %user% found a message in a bottle! It says: "You ARE the father!"
 %user% found a message in a bottle! It says: "You ARE the mother!"
-%user% found a message in a bottle! It says: "%rndn%, you ARE the father!"
-%user% found a message in a bottle! It says: "%rndn%, you are NOT the father!"
-%user% found a message in a bottle! It says: "%rndn%, you ARE the mother!"
-%user% found a message in a bottle! It says: "%rndn%, you are NOT the mother!"
+%user% found a message in a bottle! It says: "$odd(%rndn%), you ARE the father!"
+%user% found a message in a bottle! It says: "$odd(%rndn%), you are NOT the father!"
+%user% found a message in a bottle! It says: "$odd(%rndn%), you ARE the mother!"
+%user% found a message in a bottle! It says: "$odd(%rndn%), you are NOT the mother!"
 %user% found a message in a bottle! It sa- You have died
 %user% found a message in a bottle! It says: "Now that you have read this message you must die"
 %user% found a message in a bottle! It says: "If you're reading this, you've been in a coma for almost 20 years now, we're trying a new technique. We don't know where this message will end up in your dream, but we hope we're getting though. Please wake up! We miss you"
@@ -263,7 +263,7 @@
 %user% found a message in a bottle! One thing led to another and you're now part of a dinosaur themed robot team
 %user% found a message in a bottle! Upon further inspection, you realize there is a Troll behind you. You are not Immune
 %user% found a message in a bottle! The voices tell you to burn everything
-%user% found a message in a bottle! The voices tell you to burn %rndn%
+%user% found a message in a bottle! The voices tell you to burn $odd(%rndn%)
 %user% found a message in a bottle! It turns out to be a really clever advertisement for a webcomic
 %user% found a message in a bottle! It is a recipe for hair sparkles!
 %user% found a message in a bottle! It is a recipe for death in a jar!
@@ -278,7 +278,7 @@
 %user% found a message in a bottle! A small winged creature flies out and thanks you before vanishing
 %user% found a message in a bottle! Touching the bottle sends a chill down your spine. You choose to ignore it but it's too late and the curse has already taken hold. You die
 %user% found a message in a bottle! It says: "Who's your mommy?"
-%user% found a message in a bottle! %user% mustn't have been very observant because %rndn% shanked their stupid ass
+%user% found a message in a bottle! %user% mustn't have been very observant because $odd(%rndn%) shanked their stupid ass
 %user% found a message in a bottle! Using the knowledge contained within, you proceed to take over the world. You are a fair ruler and the people love you
 %user% found a message in a bottle! Using the knowledge contained within, you proceed to take over the world. You are a cruel ruler and the people kill you
 %user% found a message in a bottle! Using the knowledge contained within, you proceed to make millions. This comes at the cost of others and you are soon found dead
@@ -303,8 +303,8 @@
 %user% found a message in a bottle! Upon touching the bottle you fall into a short coma. When you awaken you discover you have the power to fly. You become the hero
 %user% found a message in a bottle! Upon touching the bottle you fall into a short coma. When you awaken you discover you have the power to fly. You become the villain
 %user% found a message in a bottle! Upon touching the bottle you fall into a short coma. When you awaken you discover you have the power to fly. During your first flight you crash into an jetliner and die
-%user% found a message in a bottle! It says, "It'll be fun they said. It'll be easy the said. But look at me now, I'm a stinking paper in a bottle!"
-%user% found a message in a bottle! It says, "The cow says, 'Moooo'"
+%user% found a message in a bottle! It says: "It'll be fun they said. It'll be easy the said. But look at me now, I'm a stinking paper in a bottle!"
+%user% found a message in a bottle! It says: "The cow says, 'Moooo'"
 %user% found a message in a bottle! You run the fuck away, bottles are never good
 %user% found a message in a bottle! You carefully put it back and never look at it again
 %user% found a message in a bottle! A voice in your head warns you away and you leave it
@@ -325,6 +325,19 @@
 %user% found a message in a bottle! It turns out to be neither a message or a bottle. You've been drugged and are hallucinating. Tell the unicorns to go away
 %user% found a message in a bottle! "Daaaang, you ugly," says the bottle in a gravelly black man's voice before leaping from your hands
 %user% found a message in a bottle! "Hello %user%, I am god," speaks the bottle. You startle and drop the bottle, shattering it. You sweep it away and hope no one finds out what happened
-%user% found a message in a bottle! It says, "Suck a cock, OP"
-%user% found a message in a bottle! It says, "So, what you doing tonight babe?"
+%user% found a message in a bottle! It says: "Suck a cock, OP"
+%user% found a message in a bottle! It says: "So, what you doing tonight babe?"
 %user% found a message in a bottle! The bottle speaks and claims you are the chosen one and need to set off on a quest to destroy a great and powerful evil necromancer. You kindly decline and put the bottle back
+%user% found a message in a bottle! It says: "You ARE the drunken sailor"
+%user% found a message in a bottle! The earth cracks beneath you
+%user% found a message in a bottle! A terrible beast is summoned to your side
+%user% found a message in a bottle! A terrible beast is summoned to your side. You can not control it and it kills you
+%user% found a message in a bottle! A terrible beast is summoned to your side. You can not control it, but soon discover you don't need to. It grows to be far less terrible
+%user% found a message in a bottle! "I am a castaway on an island lost at sea. It's lonely, no one can hear me. So lonely. Rescue me before I fall into despair"
+%user% found a message in a bottle! The curse takes hold and the world seems to fade away. Later you awaken in the lap of a demon. Your relationship starts off rocky but eventually you two save the world
+%user% found a message in a bottle! The curse takes hold and the world seems to fade away. Later you awaken in the lap of a demon. Many adventures are had as the demon tries to fit into this world
+%user% found a message in a bottle! Curry powder explodes from the bottle. You are blinded
+%user% found a message in a bottle! One thing leads to another and now you're battling a demon with a fiddle
+%user% found a message in a bottle! Inside is a scrap of paper with strange words on it. You without realizing it read it out loud and discover you can control magic
+%user% found a message in a bottle! Time stops and then changes. You're not aware of what changes are taking place but you know your old life is over. A man appears next to you, "I've waited a long time to meet you. Are you ready?"
+%user% found a message in a bottle! It says: "If you're reading this, I am dead. The date is October 7th, 1948 and I am the last remaining survivor of the Tidal Raven cargo ship. I do not wish to be found, I do not need to be rescued. I simply want my family to know. Tell them I am sorry I didn't make it"
