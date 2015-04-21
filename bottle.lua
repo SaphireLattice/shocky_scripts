@@ -37,9 +37,9 @@ if bl ~= "" then
         t_bl_f[channel_l]=split(list_l,",")
     end
 
-    if t_bl_f[channel.name]~={} or t_bl_f[channel.name]~=nil then
+    if t_bl_f[channel.name]~={} and t_bl_f[channel.name]~=nil then
         for k,v in pairs(t_bl_f[channel.name]) do
-            t[tonumber(v)] = "%user% found a message in a bottle! Upon further examination, you realize that it is bottle filled with pitch black liquid. You think you hear \"Blacklisted!\"."
+            t[tonumber(v)] = "%user% found a message in a bottle! It says: \"Unfortunately, this bottle is not available in your country because it may contain offensive material not sanctioned by your government.\""
         end
     end
 end
