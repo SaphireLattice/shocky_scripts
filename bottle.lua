@@ -39,7 +39,7 @@ if bl ~= "" then
 
     if t_bl_f[channel.name]~={} or t_bl_f[channel.name]~=nil then
         for k,v in pairs(t_bl_f[channel.name]) do
-            t[v] = nil
+            t[tonumber(v)] = "%user% found a message in a bottle! Upon further examination, you realize that it is bottle filled with pitch black liquid. You think you hear \"Blacklisted!\"."
         end
     end
 end
