@@ -70,7 +70,7 @@
 %user% found a message in a bottle! Upon further examination, you realize it's an old lamp. You rub it but nothing happens
 %user% found a message in a bottle! Upon further examination, you realize it's an old lamp. You rub it and your next three wishes give you the perfect life
 %user% found a message in a bottle! Upon further examination, you realize it's an old lamp. You rub it and your next three wishes go horribly wrong one after the other
-%user% found a message in a bottle! Upon further examination, you realize it's an old lamp. You rub it and your next first wish goes horribly wrong. You throw it back into the sea
+%user% found a message in a bottle! Upon further examination, you realize it's an old lamp. You rub it and your first wish goes horribly wrong. You throw it back into the sea
 %user% found a message in a bottle! Upon further examination, you realize how dangerous it's to open strange bottles
 %user% found a message in a bottle! Upon further examination, you wish you hadn't
 %user% found a message in a bottle! Upon further examination, you realize it's marked "bio-hazard"
@@ -309,7 +309,7 @@
 %user% found a message in a bottle! A terrible beast is summoned to your side
 %user% found a message in a bottle! A terrible beast is summoned to your side. You can not control it and it kills you
 %user% found a message in a bottle! A terrible beast is summoned to your side. You can not control it, but soon discover you don't need to. It grows to be far less terrible
-%user% found a message in a bottle! it says: "I am a castaway on an island lost at sea. It's lonely, no one can hear me. So lonely. Rescue me before I fall into despair"
+%user% found a message in a bottle! It says: "I am a castaway on an island lost at sea. It's lonely, no one can hear me. So lonely. Rescue me before I fall into despair"
 %user% found a message in a bottle! The curse takes hold and the world seems to fade away. Later you awaken in the lap of a demon. Your relationship starts off rocky but eventually you two save the world
 %user% found a message in a bottle! The curse takes hold and the world seems to fade away. Later you awaken in the lap of a demon. Many adventures are had as the demon tries to fit into this world
 %user% found a message in a bottle! Curry powder explodes from the bottle. You are blinded
