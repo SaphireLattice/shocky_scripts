@@ -38,8 +38,7 @@
 %user% found a message in a bottle! It says: "Game over man, game over!"
 %user% found a message in a bottle! It says: "I've eaten all my friends and need new ones. Will you come and be my friend?"
 %user% found a message in a bottle! It says: "Please leave a message after the beep"
-%user% found a message in a bottle! It says: "Bring some women, we're lonely out here"
-%user% found a message in a bottle! It says: "Bring some men, we're lonely out here"
+%user% found a message in a bottle! It says: "Bring some $rnd(women,men), we're lonely out here"
 %user% found a message in a bottle! It says: "I have eluded the authorities for years. My secret: I got lost along the way"
 %user% found a message in a bottle! It says: "Fuck that guy especially"
 %user% found a message in a bottle! It says: "If you wanted to, you could use a radio. I wanted a bottle instead"
@@ -63,9 +62,7 @@
 %user% found a message in a bottle! Upon further examination, you realize that it is a bottle of artificially flavored bacon bits.
 %user% found a message in a bottle! Upon further examination, you realize there is a tiny boat inside
 %user% found a message in a bottle! Upon further examination, you realize how buoyant these are
-%user% found a message in a bottle! Upon further examination, you realize it's full of your favorite beer
-%user% found a message in a bottle! Upon further examination, you realize it's full of your favorite wine
-%user% found a message in a bottle! Upon further examination, you realize it's full of your favorite mead
+%user% found a message in a bottle! Upon further examination, you realize it's full of your$rnd( , least )favorite $rnd(beer,wine,mead,liquor,soft drink, condiment)
 %user% found a message in a bottle! Upon further examina- You have died
 %user% found a message in a bottle! Upon further examination, you realize you threw this exact bottle 3 nights ago
 %user% found a message in a bottle! Upon further examination, you realize it's empty
@@ -73,15 +70,11 @@
 %user% found a message in a bottle! Upon further examination, you realize it's an old lamp. You rub it but nothing happens
 %user% found a message in a bottle! Upon further examination, you realize it's an old lamp. You rub it and your next three wishes give you the perfect life
 %user% found a message in a bottle! Upon further examination, you realize it's an old lamp. You rub it and your next three wishes go horribly wrong one after the other
-%user% found a message in a bottle! Upon further examination, you realize it's an old lamp. You rub it and your next first wish goes horribly wrong. You throw it back into the sea
+%user% found a message in a bottle! Upon further examination, you realize it's an old lamp. You rub it and your first wish goes horribly wrong. You throw it back into the sea
 %user% found a message in a bottle! Upon further examination, you realize how dangerous it's to open strange bottles
 %user% found a message in a bottle! Upon further examination, you wish you hadn't
 %user% found a message in a bottle! Upon further examination, you realize it's marked "bio-hazard"
-%user% found a message in a bottle! Upon further examination, you realize there is a drunk mermaid attached
-%user% found a message in a bottle! Upon further examination, you realize there is a drunk merman attached
-%user% found a message in a bottle! Upon further examination, you realize there is a drunk sailor attached
-%user% found a message in a bottle! Upon further examination, you realize there is a drunk man attached
-%user% found a message in a bottle! Upon further examination, you realize there is a drunk woman attached
+%user% found a message in a bottle! Upon further examination, you realize there is a drunk $rnd(mermaid,merman,sailor,man,woman) attached
 %user% found a message in a bottle! Upon further examination, you should have learned to swim
 %user% found a message in a bottle! Upon further examination, you notice the hermit crab using it as it's home
 %user% found a message in a bottle! Upon further examination, you die not noticing the missing pin.
@@ -205,15 +198,9 @@
 %user% found a message in a bottle! One thing leads to another and now you know exactly how robust a bottle can be
 %user% found a message in a bottle! One thing leads to another and now you're picking up litter
 %user% found a message in a bottle! One thing leads to another and now you're chasing three kids around as they suffer a series of unfortunate events.
-%user% found a message in a bottle! It says: "You are NOT the father!"
-%user% found a message in a bottle! It says: "You are NOT the mother!"
-%user% found a message in a bottle! It says: "Who's your daddy?"
-%user% found a message in a bottle! It says: "You ARE the father!"
-%user% found a message in a bottle! It says: "You ARE the mother!"
-%user% found a message in a bottle! It says: "$odd(%rndn%), you ARE the father!"
-%user% found a message in a bottle! It says: "$odd(%rndn%), you are NOT the father!"
-%user% found a message in a bottle! It says: "$odd(%rndn%), you ARE the mother!"
-%user% found a message in a bottle! It says: "$odd(%rndn%), you are NOT the mother!"
+%user% found a message in a bottle! It says: "You $rnd(are NOT,ARE) the $rnd(father,mother,drunken sailor)!"
+%user% found a message in a bottle! It says: "Who's your $rnd(daddy,mommy)?"
+%user% found a message in a bottle! It says: "$odd(%rndn%), you $rnd(are NOT,ARE) the $rnd(father,mother,drunken sailor)!"
 %user% found a message in a bottle! It sa- You have died
 %user% found a message in a bottle! It says: "Now that you have read this message you must die"
 %user% found a message in a bottle! It says: "If you're reading this, you've been in a coma for almost 20 years now, we're trying a new technique. We don't know where this message will end up in your dream, but we hope we're getting though. Please wake up! We miss you"
@@ -246,8 +233,7 @@
 %user% found a message in a bottle! It says: "The user who maintains this factoid is an idiot"
 %user% found a message in a bottle! It contained a small handgun with the message "Kill yourself"
 %user% found a message in a bottle! The bottle was made of solid glass but otherwise unremarkable
-%user% found a message in a bottle! The message was impossible to remove and you give up
-%user% found a message in a bottle! The message was impossible to read and you give up
+%user% found a message in a bottle! The message was impossible to $rnd(remove,read) and you give up
 %user% found a message in a bottle! The message was actually nothing, just a blank paper
 %user% found a message in a bottle! The bottle contained a fantastic but unfinished book. Soon after, you begin finding more bottles with later chapters. Eventually you begin looking forward to the update bottles
 %user% found a message in a bottle! It says: "%user% don't think, just run. They're coming for you."
@@ -255,8 +241,7 @@
 %user% found a message in a bottle! It says: "tamam shud"
 %user% found a message in a bottle! It says: "tamam shud" and you die instantly.
 %user% found a message in a bottle! One thing lead to another and you're now the captain of SS Bänkt
-%user% found a message in a bottle! It contained a map to Fort Kickass. No girls allowed
-%user% found a message in a bottle! It contained a map to Fort Kickass. No boys allowed
+%user% found a message in a bottle! It contained a map to Fort Kickass. No $rnd(girls,boys) allowed
 %user% found a message in a bottle! It contained a map to Fort Kickass. Clothing is optional
 %user% found a message in a bottle! It contained a map to Fort Kickass. It was occupied by the enemy. You painted the walls red
 %user% found a message in a bottle! One thing led to another and you're now part of a giant
@@ -277,7 +262,6 @@
 %user% found a message in a bottle! Attempting to read it you find yourself now trapped in the bottle
 %user% found a message in a bottle! A small winged creature flies out and thanks you before vanishing
 %user% found a message in a bottle! Touching the bottle sends a chill down your spine. You choose to ignore it but it's too late and the curse has already taken hold. You die
-%user% found a message in a bottle! It says: "Who's your mommy?"
 %user% found a message in a bottle! %user% mustn't have been very observant because $odd(%rndn%) shanked their stupid ass
 %user% found a message in a bottle! Using the knowledge contained within, you proceed to take over the world. You are a fair ruler and the people love you
 %user% found a message in a bottle! Using the knowledge contained within, you proceed to take over the world. You are a cruel ruler and the people kill you
@@ -290,13 +274,6 @@
 %user% found a message in a bottle! Inside is the exact object you were looking for. You don't remember looking for it but now you have it. Later you █████████ leaving only the bottle.
 %user% found a message in a bottle! Subject is 23.37816cm tall, with a white water resistant paper containing information and logo consistent with the ██████████████ █████████ brand. ████████ has a memnatic effect forcing it's victim, henceforth refereed to as ████████-1 to █████ uncontrollably
 %user% found a message in a bottle! It says, "The end is nigh!"
-%user% found a message in a bottle! It contains your favorite soft drink
-%user% found a message in a bottle! It contains your favorite condiment
-%user% found a message in a bottle! It contains your least favorite beer
-%user% found a message in a bottle! It contains your least favorite wine
-%user% found a message in a bottle! It contains your least favorite liquor
-%user% found a message in a bottle! It contains your least favorite soft drink
-%user% found a message in a bottle! It contains your least favorite condiment
 %user% found a message in a bottle! Upon touching the bottle you feel your body go numb. You die of electrocution
 %user% found a message in a bottle! Upon touching the bottle the air fills with static. You are then struck by lightning and die
 %user% found a message in a bottle! Upon touching the bottle the air fills with static. You are then struck by lightning but somehow come away unscathed.
@@ -328,12 +305,11 @@
 %user% found a message in a bottle! It says: "Suck a cock, OP"
 %user% found a message in a bottle! It says: "So, what you doing tonight babe?"
 %user% found a message in a bottle! The bottle speaks and claims you are the chosen one and need to set off on a quest to destroy a great and powerful evil necromancer. You kindly decline and put the bottle back
-%user% found a message in a bottle! It says: "You ARE the drunken sailor"
 %user% found a message in a bottle! The earth cracks beneath you
 %user% found a message in a bottle! A terrible beast is summoned to your side
 %user% found a message in a bottle! A terrible beast is summoned to your side. You can not control it and it kills you
 %user% found a message in a bottle! A terrible beast is summoned to your side. You can not control it, but soon discover you don't need to. It grows to be far less terrible
-%user% found a message in a bottle! "I am a castaway on an island lost at sea. It's lonely, no one can hear me. So lonely. Rescue me before I fall into despair"
+%user% found a message in a bottle! It says: "I am a castaway on an island lost at sea. It's lonely, no one can hear me. So lonely. Rescue me before I fall into despair"
 %user% found a message in a bottle! The curse takes hold and the world seems to fade away. Later you awaken in the lap of a demon. Your relationship starts off rocky but eventually you two save the world
 %user% found a message in a bottle! The curse takes hold and the world seems to fade away. Later you awaken in the lap of a demon. Many adventures are had as the demon tries to fit into this world
 %user% found a message in a bottle! Curry powder explodes from the bottle. You are blinded
