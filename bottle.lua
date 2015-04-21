@@ -17,7 +17,7 @@ local function split(str, pat)
     return t
 end
 
-local branch= "master"
+local branch= _G.bottle_branch or "master"
 local repo  = "https://github.com/dangranos/shocky_scripts/raw/"..branch.."/"
 local s     = net.get(repo..'bottles.txt')
 local sc    = net.get(repo..'bottles_'..net.url((channel.name or ""))..'.txt')
@@ -28,12 +28,22 @@ local t     = split(s,'\n')
 local r     = math.random(1,#t)
 
 --blacklist loading--
-local bl    = net.get(repo.."bottles_blacklist.txt")
-local t_bl  = split(bl,"\n")
+local bl    = net.get(repo.."bottles_blacklist.txt") or ""
+if bl ~= "" then
+    local t_bl  = split(bl,"\n")
+    local t_bl_f = {}
+    for k,v in pairs(t_bl) do
+        local _,_,channel_l,list = string.find(v,"(#[a-zA-Z_-]+)[ ]+([0-9,]+)")
+        t_bl_f[channel_l]=split(list,",")
+    end
 
-for k,v in pairs(t_bl) do
-    
+    if t_bl_f[channel.name]~={} or t_bl_f[channel.name]~=nil then
+        for k,v in t_bl_f[channel.name] do
+            t[v] = nil
+        end
+    end
 end
+
 
 --arguments--
 if argc >= 1 then
