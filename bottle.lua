@@ -33,8 +33,8 @@ if bl ~= "" then
     local t_bl  = split(bl,"\n")
     local t_bl_f = {}
     for k,v in pairs(t_bl) do
-        local _,_,channel_l,list = string.find(v,"(#[a-zA-Z_-]+)[ ]+([0-9,]+)")
-        t_bl_f[channel_l]=split(list,",")
+        local _,_,channel_l,list_l = string.find(v,"(#[a-zA-Z_-]+)[ ]+([0-9,]+)")
+        t_bl_f[channel_l]=split(list_l,",")
     end
 
     if t_bl_f[channel.name]~={} or t_bl_f[channel.name]~=nil then
