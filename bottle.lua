@@ -38,7 +38,7 @@ if bl ~= "" then
     end
 
     if t_bl_f[channel.name]~={} or t_bl_f[channel.name]~=nil then
-        for k,v in t_bl_f[channel.name] do
+        for k,v in pairs(t_bl_f[channel.name]) do
             t[v] = nil
         end
     end
