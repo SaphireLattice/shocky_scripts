@@ -62,7 +62,7 @@
 %user% found a message in a bottle! Upon further examination, you realize that it is a bottle of artificially flavored bacon bits.
 %user% found a message in a bottle! Upon further examination, you realize there is a tiny boat inside
 %user% found a message in a bottle! Upon further examination, you realize how buoyant these are
-%user% found a message in a bottle! Upon further examination, you realize it's full of your $rnd(favorite,least favorite) $rnd(beer,wine,mead,liquor,soft drink, condiment)
+%user% found a message in a bottle! Upon further examination, you realize it's full of your$rnd( , least )favorite $rnd(beer,wine,mead,liquor,soft drink, condiment)
 %user% found a message in a bottle! Upon further examina- You have died
 %user% found a message in a bottle! Upon further examination, you realize you threw this exact bottle 3 nights ago
 %user% found a message in a bottle! Upon further examination, you realize it's empty
