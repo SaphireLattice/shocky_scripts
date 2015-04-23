@@ -327,3 +327,12 @@
 %user% found a message in a bottle! It says: "Day 88. Bart died 2 hours ago, ripped apart by those grim beasts sitting at the edge of camp. He did however find the plane and managed to get a woman, who says her name is Irene to the camp.
 %user% found a message in a bottle! It says: "Day 1. We've crash landed on what appears to be an island. After discovering many oddities in my short stint here I have decided to begin keeping a log of such items. I hope to return to this place after rescue and make a more formal log."
 %user% found a message in a bottle! It says: "Day 134. They have spoken before, but never like this. I awoke today to one of the creatures standing over me and Irene. I went for my knife but it was too fast and had me pinned. It then spoke 'You stay, we leave be. You fight good. Welcome.' and then pointed to Irene. 'Not fight. Bad. Make pet or kill.' and then it left. I am finally afraid."
+%user% found a message in a bottle! It says: "I have eluded the authorities for years. I'll tell you how if you bring a boat"
+%user% found a message in a bottle! Somehow, should you live though all of this, you decide you're buying a boat so you can find and strangle the guy making these things
+%user% found a message in a bottle! It says: "I don't know where to begin. We've been stranded for days out here, food has just run out. Already a body has turned up. I fear that we're going to die, if not to this island, to ourselves"
+%user% found a message in a bottle! It says: "I don't know where to begin. We've been stranded for days out here, food has just run out. Already a body has turned up. I fear that I may have left the kettle on"
+%user% found a message in a bottle! You pick up the quantum bottle and die. You know then that you just created another universe in which you live
+%user% found a message in a bottle! The message seems to be written on rawhide. "The hunt was good"
+%user% found a message in a bottle! It turns out to be a limitless supply of your $rnd(least ,)favorite $rnd(beer,wine,mead,liquor,soft drink)
+%user% found a message in a bottle! It says: "!bottle"
+%user% found a message in a bottle! It says: "This is the last bottle of any drinkable fluids on the island. With it gone, we're dead. I can't say much else then that. Goodbye world"
