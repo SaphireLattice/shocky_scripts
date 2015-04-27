@@ -1,7 +1,7 @@
 %user% found a message in a bottle! It says: "Beware of trolls!"
 %user% found a message in a bottle! It says: "We are out of tuna!"
 %user% found a message in a bottle! It says: "Lalli has eaten all the cookies!"
-%user% found a message in a bottle! It says: "Grade B Kitties required!"
+%user% found a message in a bottle! It says: "Grade $rnd(A,B,C) Kitties required!"
 %user% found a message in a bottle! It says: "All hail the great dictatress!"
 %user% found a message in a bottle! It says: "Braid your hair!"
 %user% found a message in a bottle! It says: "Fetch fenris some booze!"
@@ -10,4 +10,12 @@
 %user% found a message in a bottle! It turns out to be a SSSS fanfic. You start drawing a matching picture.
 %user% found a message in a bottle! It turns out to be a SSSS fanfic. You never read a lovelier shipping story.
 %user% found a message in a bottle! It turns out to be a SSSS RPG. You run to fetch your dice.
-%user% found a message in a bottle! It turns out to be a SSSS RPG. You start making a char as skald.
+%user% found a message in a bottle! It turns out to be a SSSS RPG. You start making a char as skald,
+%user% found a message in a bottle! At that very moment something horrible happened: You ran out of cookies
+%user% found a message in a bottle! You never get to see the message though, as you face off against 3 rather large trolls alone. The battle takes some time but eventually you come out on top. Those scars are gonna be awesome!
+%user% found a message in a bottle! You never get to see the message though, as you face off against 3 rather large trolls alone. The battle rages on and it's clear you're losing. You make an escape and live
+%user% found a message in a bottle! You never get to see the message though, as you face off against 3 rather large trolls alone. You battle furiously and manage to kill 2 of them, but in the final moments you are struck down.
+%user% found a message in a bottle! You pick it up and it crumbles to dust. Maybe you should check further inside?
+%user% found a message in a bottle! After examining the contents you notice your pet has a rash. You don't think much on it
+%user% found a message in a bottle! A small child approaches you. She seems lost and scared so you go to take her to camp. Then you notice the rash
+%user% found a message in a bottle! Overjoyed you've found water you almost miss the message on your radio, "Hello? Is anyone out there?"
