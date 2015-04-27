@@ -349,6 +349,6 @@
 %user% found a message in a bottle! New game: 1 shot every time someone else dies to the bottle, 2 if you die, and half a shot every time a @op uses !bottle
 %user% found a message in a bottle! It turns out to be filled with pain. Yes, pain. You're in the hospital now. Get well soon?
 %user% found a message in a bottle! You reach for it but are pushed into the water from behind. You wake up on an unchartered island
-$flip(%user% found a message in a bottle! It says: "Hello from down under!")
+$flip($reverse(%user% found a message in a bottle! It says: "Hello from down under!"))
 %user% found a message in a bottle! It says: "The hunt was good. Send another"
 %user% found a message in a bottle! You stare at it for some time contemplating if it's worth the risk of opening it. You do and $rnd(die,nothing happens,find happyness,get rekt,are 360noscoped)
