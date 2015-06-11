@@ -352,3 +352,8 @@
 $flip($reverse(%user% found a message in a bottle! It says: "Hello from down under!"))
 %user% found a message in a bottle! It says: "The hunt was good. Send another"
 %user% found a message in a bottle! You stare at it for some time contemplating if it's worth the risk of opening it. You do and $rnd(die,nothing happens,find happyness,get rekt,are 360noscoped)
+%user% found a message in a bottle! It says: "The job is done. That diner you so lothed is nothing more then ashes now"
+%user% found a message in a bottle! It says: "The job is done"
+%user% found a message in a bottle! It says: "I owe you a diner"
+%user% found a message in a bottle! It says: "I owe you a dinner"
+%user% found a message in a bottle! It says: "At least buy me a dinner before you touch me like that!"
