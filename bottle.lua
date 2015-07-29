@@ -17,6 +17,15 @@ local function split(str, pat)
     return t
 end
 
+local function shuffle(tbl)
+    local n, random, j = #tbl, math.random
+    for i=1, n do
+        j,k = random(n), random(n)
+        tbl[j],tbl[k] = tbl[k],tbl[j]
+    end
+    return tbl
+end
+
 local branch= _G.bottle_branch or "master"
 local repo  = "https://github.com/dangranos/shocky_scripts/raw/"..branch.."/"
 local s     = net.get(repo..'bottles.txt')
@@ -24,8 +33,8 @@ local sc    = net.get(repo..'bottles_'..net.url((channel.name or ""))..'.txt')
 if sc then
     s = s..sc
 end
-local t     = split(s,'\n')
-local r     = math.random(1,#t)
+local bottles     = split(s,'\n')
+local num     = math.random(1,#bottles)
 
 --blacklist loading--
 local bl    = net.get(repo.."bottles_blacklist.txt") or ""
@@ -39,7 +48,7 @@ if bl ~= "" then
 
     if t_bl_f[channel.name]~={} and t_bl_f[channel.name]~=nil then
         for k,v in pairs(t_bl_f[channel.name]) do
-            t[tonumber(v)] = "%user% found a message in a bottle! It says: \"Unfortunately, this bottle is not available in your country because it may contain offensive material not sanctioned by your government.\""
+            bottles[tonumber(v)] = "%user% found a message in a bottle! It says: \"Unfortunately, this bottle is not available in your country because it may contain offensive material not sanctioned by your government.\""
         end
     end
 end
@@ -56,19 +65,17 @@ if argc >= 1 then
         return
     end
     if string.lower(arg[1]) == "-count" then
-        local count = #t
-        local cby = ""
-
-        local mnt = "ies"
+        local count = #bottles
+        local suffix = "ies"
         if count == 1 then
-            mnt = "y"
+            suffix = "y"
         end
-        print(count.." entr"..mnt.." present"..cby)
+        print(count.." entr"..suffix.." present")
         return
     end
     if string.lower(arg[1]) == "-find" then
         local numt = {}
-        for i,l in pairs(t) do
+        for i,l in pairs(bottles) do
             local hf2 = true
             for i2,l2 in pairs(args) do
                 if i2 > 1 then
@@ -134,10 +141,11 @@ if argc >= 1 then
             return
         end
     end
-    local r2=tonumber(arg[1])
-    if not r2 then
+    arg1=tonumber(arg[1])
+    if not arg1 and arg[1] then
+        bottles = shuffle(bottles)
         local hf = -1
-        for i,l in pairs(t) do
+        for i,l in pairs(bottles) do
             local hf2 = true
             for i2,l2 in pairs(arg) do
                 local sstr = string.find(string.lower(l), string.lower(l2))
@@ -155,13 +163,13 @@ if argc >= 1 then
             print("Could not find a bottle that matches given keywords")
             return
         end
-        r = hf
+        num = hf
     else
-        if r2<0 then
-            r2=#t+1+r2
+        if arg1<0 then
+            r2=#bottles+1+r2
         end
-        if r2>0 and r2<=#t then
-            r=r2
+        if arg1>0 and arg1<=#bottles then
+            num=arg1
         else
             print("Can not find a bottle with entry number: "..r2)
             return
@@ -169,4 +177,7 @@ if argc >= 1 then
     end
 end
 
-print(t[r])
+if not arg[1] then
+    bottles = shuffle(bottles)
+end
+print(bottles[num])
