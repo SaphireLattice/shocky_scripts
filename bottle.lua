@@ -1,3 +1,6 @@
+------------------
+--Some functions--
+------------------
 local function split(str, pat)
     local t = {}
     local fpat = "(.-)" .. pat
@@ -26,6 +29,19 @@ local function shuffle(tbl)
     return tbl
 end
 
+local function find(tbl, query)
+    local entries = {}
+    for k,v in pairs(tbl) do
+        if string.find(string.lower(v),string.lower(query),nil,true) then
+            table.insert(entries,k)
+        end
+    end
+    return entries
+end
+-------------
+--Variables--
+-------------
+
 local branch= _G.bottle_branch or "master"
 local repo  = "https://github.com/dangranos/shocky_scripts/raw/"..branch.."/"
 local s     = net.get(repo..'bottles.txt')
@@ -36,7 +52,9 @@ end
 local bottles     = split(s,'\n')
 local num     = math.random(1,#bottles)
 
---blacklist loading--
+---------------------
+--Blacklist loading--
+---------------------
 local bl    = net.get(repo.."bottles_blacklist.txt") or ""
 if bl ~= "" then
     local t_bl  = split(bl,"\n")
@@ -53,8 +71,9 @@ if bl ~= "" then
     end
 end
 
-
---arguments--
+-------------
+--Arguments--
+-------------
 if argc >= 1 then
     if string.lower(arg[1]) == "-help" then
         print("A simple RNG that produces a message in a bottle. Use a positive number for a specific bottle or use keywords to find the first bottle containing the keywords. Use listcommands to list all commands.")
@@ -65,81 +84,17 @@ if argc >= 1 then
         return
     end
     if string.lower(arg[1]) == "-count" then
-        local count = #bottles
-        local suffix = "ies"
-        if count == 1 then
-            suffix = "y"
-        end
-        print(count.." entr"..suffix.." present")
+        print(count.." entr"..(function() if (#bottles == 1) then return "y" else return "ies" end return "" end)().." present")
         return
     end
     if string.lower(arg[1]) == "-find" then
-        local numt = {}
-        for i,l in pairs(bottles) do
-            local hf2 = true
-            for i2,l2 in pairs(args) do
-                if i2 > 1 then
-                    local sstr = string.find(string.lower(l), string.lower(l2))
-                    if not sstr then
-                        hf2 = false
-                        break
-                    end
-                end
-            end
-            if hf2 then
-                table.insert(numt, i)
-            end
-        end
-        if #numt == 0 then
-            print("Could not find a bottle that matches given keywords")
-            return
-        else
-            local numstr = ""
-            local numts = {}
-            local numstart = -1
-            local numcur = -1
-            local ii = 1
-            while ii <= #numt do
-                local ll = numt[ii]
-                if ll - 1 ~= numcur then
-                    if numstart > -1 then
-                        if numstart ~= numcur then
-                            table.insert(numts, numstart.."-"..numcur)
-                        else
-                            table.insert(numts, tostring(numstart))
-                        end
-                    end
-                    numstart = ll
-                end
-                numcur = ll
-                ii = ii + 1
-            end
-            if numstart ~= numcur then
-                table.insert(numts, numstart.."-"..numcur)
-            else
-                table.insert(numts, tostring(numstart))
-            end
-            for i3,l3 in pairs(numts) do
-                if i3 > 1 then
-                    if i3 == #numts then
-                        numstr = numstr.." and "
-                    else
-                        numstr = numstr..", "
-                    end
-                end
-                numstr = numstr..l3
-            end
-            local mult = ""
-            if #arg > 2 then
-                mult = "s"
-            end
-            local mult2 = "y"
-            if #numt > 1 then
-                mult2 = "ies"
-            end
-            print("Keyword"..mult.." found in entr"..mult2.." "..numstr)
-            return
-        end
+        --print("inside -exp-find")
+        local keywords = table.concat(arg, " ", 2)
+        local entries = find(bottles, keywords)
+        --print("after find(), entries: "..tostring(#entries or 0))
+        if #entries == 0 then print("Could not find a bottle that matches given keywords (-find)") return end
+        print("Found keyword"..(function() if (#(arg or ({})) - 2) > 0 then return "s" end return "" end)().." \""..keywords.."\" in bottle"..(function() if #entries > 1 then return "s:" else return "" end end)().." "..table.concat(entries,","))
+        return
     end
     arg1=tonumber(arg[1])
     if not arg1 and arg[1] then
