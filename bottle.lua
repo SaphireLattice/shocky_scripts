@@ -38,6 +38,9 @@ local function find(tbl, query)
     end
     return entries
 end
+
+math.randomseed(os.time())
+
 -------------
 --Variables--
 -------------
@@ -88,38 +91,18 @@ if argc >= 1 then
         return
     end
     if string.lower(arg[1]) == "-find" then
-        --print("inside -exp-find")
         local keywords = table.concat(arg, " ", 2)
         local entries = find(bottles, keywords)
-        --print("after find(), entries: "..tostring(#entries or 0))
         if #entries == 0 then print("Could not find a bottle that matches given keywords (-find)") return end
         print("Found keyword"..(function() if (#(arg or ({})) - 2) > 0 then return "s" end return "" end)().." \""..keywords.."\" in bottle"..(function() if #entries > 1 then return "s:" else return "" end end)().." "..table.concat(entries,","))
         return
     end
-    arg1=tonumber(arg[1])
+    arg1 = tonumber(arg[1])
     if not arg1 and arg[1] then
-        bottles = shuffle(bottles)
-        local hf = -1
-        for i,l in pairs(bottles) do
-            local hf2 = true
-            for i2,l2 in pairs(arg) do
-                local sstr = string.find(string.lower(l), string.lower(l2))
-                if not sstr then
-                    hf2 = false
-                    break
-                end
-            end
-            if hf2 then
-                hf = i
-                break
-            end
-        end
-        if hf < 0 then
-            print("Could not find a bottle that matches given keywords")
-            return
-        end
-        num = hf
-    else
+        local entries = find(bottles, table.concat(arg, " ", 1))
+        if #entries == 0 then print("Could not find a bottle that matches give keywords") return end
+        num = tonumber(entries[math.random(#entries)])
+    elseif arg1 then
         if arg1<0 then
             r2=#bottles+1+r2
         end
