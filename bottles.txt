@@ -352,8 +352,20 @@
 $flip($reverse(%user% found a message in a bottle! It says: "Hello from down under!"))
 %user% found a message in a bottle! It says: "The hunt was good. Send another"
 %user% found a message in a bottle! You stare at it for some time contemplating if it's worth the risk of opening it. You do and $rnd(die,nothing happens,find happyness,get rekt,are 360noscoped)
-%user% found a message in a bottle! It says: "The job is done. That diner you so lothed is nothing more then ashes now"
+%user% found a message in a bottle! It says: "The job is done. That diner you so loathed is nothing more then ashes now"
 %user% found a message in a bottle! It says: "The job is done"
 %user% found a message in a bottle! It says: "I owe you a diner"
 %user% found a message in a bottle! It says: "I owe you a dinner"
 %user% found a message in a bottle! It says: "At least buy me a dinner before you touch me like that!"
+%user% found a message in a bottle! Upon further examination, a small seed falls out. It grows quickly, and within a few days there is a whole forest. "You wear nice shirts. We should hang out", the trees whisper to you. You feel a tingling in your feet and soon realize you can not lift them from the ground. You spend the rest of your days in the collective consciousness of the trees
+%user% found a mesage in a bottle! It says: "You won a free 30-day trial! Your free 30-day trial comes with a free arrest, free charges, and a free sentence."
+%user% found a message in a bottle! The paper is covered with a slimy green substance and you can make out only the word "cryptotoxicology". 
+%user% found a message in a bottle! A child-like voice inside asks you to name every person you have ever kised. 
+%user% found a message in a bottle! You wake up decades later, unchanged except for the knowledge that everyone around you is now older, wiser, and more successful. 
+%user% found a message in a bottle! It says: "Puppies for sale! Come down and get a puppy! Seriously, please come, they are everywhere - in the walls, in the floor, we are overrrun with puppies."
+%user% found a message in a bottle! A cloud escapes the bottle and begins raining down dead animals of various sizes. Hope you brought an umbrella.
+%user% found a message in a bottle! It says: "They are here." 
+%user% found a message in a bottle! It says: "Today is a great day for asking your boss for a promotion, sharing your feelings with that person you've been interested in, or trying a new hobby! Unfortunately, it is a terrible day for getting that promotion, having that person say yes, or not injuring yourself horribly on a power sander."
+%user% found a message in a bottle! It smells vaguely of french toast. You lose consciousness and die. 
+%user% found a message in a bottle! It says: "You are awaited in Valhalla"
+%user% found a message in a bottle! When you open it, you see a vision of yourself as an old person, looking back fondly on the past that is your now.
