@@ -87,7 +87,7 @@ if argc >= 1 then
         return
     end
     if string.lower(arg[1]) == "-count" then
-        print(count.." entr"..(function() if (#bottles == 1) then return "y" else return "ies" end return "" end)().." present")
+        print(#bottles.." entr"..(function() if (#bottles == 1) then return "y" else return "ies" end return "" end)().." present")
         return
     end
     if string.lower(arg[1]) == "-find" then
@@ -103,14 +103,14 @@ if argc >= 1 then
         if #entries == 0 then print("Could not find a bottle that matches give keywords") return end
         num = tonumber(entries[math.random(#entries)])
     elseif arg1 then
-        if arg1<0 then
-            r2=#bottles+1+r2
-        end
-        if arg1>0 and arg1<=#bottles then
-            num=arg1
-        else
-            print("Can not find a bottle with entry number: "..r2)
+        if (arg1 < (0-#bottles)) or (arg1 > #bottles) then
+            print("Can not find a bottle with entry number: " .. tostring(arg1))
             return
+        elseif arg1<0 then
+            num = #bottles + 1 + arg1
+        elseif arg1>0 then
+            num = arg1
+        else
         end
     end
 end
