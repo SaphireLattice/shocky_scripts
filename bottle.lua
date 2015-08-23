@@ -69,7 +69,9 @@ if bl ~= "" then
 
     if t_bl_f[channel.name]~={} and t_bl_f[channel.name]~=nil then
         for k,v in pairs(t_bl_f[channel.name]) do
-            bottles[tonumber(v)] = "%user% found a message in a bottle! It says: \"Unfortunately, this bottle is not available in your country because it may contain offensive material not sanctioned by your government.\""
+            if (#arg==1) and (type(tonumber(arg[1]))=="number" and tonumber(arg[1])==tonumber(v)) then
+            else bottles[tonumber(v)] = "%user% found a message in a bottle! It says: \"Unfortunately, this bottle is not available in your country because it may contain offensive material not sanctioned by your government.\""
+            end
         end
     end
 end
