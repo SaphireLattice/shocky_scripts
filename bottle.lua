@@ -29,10 +29,10 @@ local function shuffle(tbl)
     return tbl
 end
 
-local function find(tbl, query)
+local function find(tbl, query, raw)
     local entries = {}
     for k,v in pairs(tbl) do
-        if string.find(string.lower(v),string.lower(query),nil,true) then
+        if string.find(string.lower(v), string.lower(query), nil, (tostring((raw ~= nil and tostring(raw)) or "true")=="true")) then
             table.insert(entries,k)
         end
     end
@@ -45,10 +45,10 @@ math.randomseed(os.time())
 --Variables--
 -------------
 
-local branch= _G.bottle_branch or "master"
-local repo  = "https://github.com/dangranos/shocky_scripts/raw/"..branch.."/"
-local s     = net.get(repo..'bottles.txt')
-local sc    = net.get(repo..'bottles_'..net.url((channel.name or ""))..'.txt')
+local branch = _G.bottle_branch or "master"
+local repo   = "https://github.com/dangranos/shocky_scripts/raw/"..branch.."/"
+local s      = net.get(repo..'bottles.txt')
+local sc     = net.get(repo..'bottles_'..net.url((channel.name or ""))..'.txt')
 if sc then
     s = s..sc
 end
@@ -76,29 +76,71 @@ if bl ~= "" then
     end
 end
 
--------------
---Arguments--
--------------
+------------
+--Commands--
+------------
+
+cmds = {
+    prefix  = "-",
+    pattern = "[ ]*"..(cmds.prefix).."([a-z0-9A-Z]+)",
+    aliases = {
+        f = "find",
+        h = "help",
+        c = "count",
+        listcommands = "commands",
+    },
+    description = {
+        find = "",
+        count = "",
+        help = "",
+        commands = "",
+    },
+    reserved = {prefix = 1, pattern = 1, aliases = 1, description = 1, reserved = 1, execute = 1, notfound = 0, check = 1},
+    check = function(argt) --check if there are any commands
+        return (true and (find(argt, cmds.pattern, false) == 1))
+    end,
+    notfound = function(cmd) return "Command \""..cmd.."\" not found." end,
+    execute = function(argt) --execute commands
+        local args = table.concat(argt," ")
+        local cmd_index = find(argt, cmds.pattern, false)
+        if cmd_index ~= 1 then return false end
+        local cmd_s = string.sub(argt[cmd_index],2)
+        local cmd_f = (cmds[cmd_s] or cmds[cmds.aliases[cmd_s]] or notfound )
+        if reserved[cmd_s]==1 then cmd_f=notfound end
+        return cmd_f(table.remove(argt,1))
+    end,
+    find = function(argt)
+        local keywords = table.concat(argt, " ")
+        local entries = find(bottles, keywords)
+        if #entries == 0 then print("Could not find a bottle that matches given keywords (-find)") return end
+        return ("Found keyword"..(function() if (#(argt or ({})) - 1) > 0 then return "s" end return "" end)().." \""..keywords.."\" in bottle"..(function() if #entries > 1 then return "s:" else return "" end end)().." "..table.concat(entries,","))
+    end,
+    help = function(argt)
+        return ""
+    end,
+    commands = function()
+        return ("")
+    end,
+    count = function()
+        return (#bottles.." entr"..(function() if (#bottles == 1) then return "y" else return "ies" end return "" end)().." present")
+    end,
+}
+--------
+--MAIN--
+--------
+
 if argc >= 1 then
-    if string.lower(arg[1]) == "-help" then
+    if cmds.check(arg) then
+        cmds.execute(arg)
+    end
+    --[[if string.lower(arg[1]) == "-help" then
         print("A simple RNG that produces a message in a bottle. Use a positive number for a specific bottle or use keywords to find the first bottle containing the keywords. Use listcommands to list all commands.")
         return
     end
     if string.lower(arg[1]) == "-listcommands" then
         print("help : Displays help prompt | find <keywords> : List bottles containing <keywords> | count : Lists total number of bottles")
         return
-    end
-    if string.lower(arg[1]) == "-count" then
-        print(#bottles.." entr"..(function() if (#bottles == 1) then return "y" else return "ies" end return "" end)().." present")
-        return
-    end
-    if string.lower(arg[1]) == "-find" then
-        local keywords = table.concat(arg, " ", 2)
-        local entries = find(bottles, keywords)
-        if #entries == 0 then print("Could not find a bottle that matches given keywords (-find)") return end
-        print("Found keyword"..(function() if (#(arg or ({})) - 2) > 0 then return "s" end return "" end)().." \""..keywords.."\" in bottle"..(function() if #entries > 1 then return "s:" else return "" end end)().." "..table.concat(entries,","))
-        return
-    end
+    end]]--
     arg1 = tonumber(arg[1])
     if not arg1 and arg[1] then
         local entries = find(bottles, table.concat(arg, " ", 1))
