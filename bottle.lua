@@ -1,6 +1,15 @@
 ------------------
 --Some functions--
 ------------------
+_G.bottle_debug_output = ""
+
+local function dprint(...)
+    if _G.bottle_debug then
+        _G.bottle_debug_output = table.concat({...}," ")
+        print(...)
+    end
+end
+
 local function split(str, pat)
     local t = {}
     local fpat = "(.-)" .. pat
@@ -29,13 +38,17 @@ local function shuffle(tbl)
     return tbl
 end
 
-local function find(tbl, query)
+local function find(tbl, query, raw)
+    dprint("Inside of find")
     local entries = {}
     for k,v in pairs(tbl) do
-        if string.find(string.lower(v),string.lower(query),nil,true) then
+        dprint("for")
+        if string.find(string.lower(v), string.lower(query), nil, (tostring((raw ~= nil and tostring(raw)) or "true")=="true")) then
+            dprint("insert")
             table.insert(entries,k)
         end
     end
+    dprint("Out")
     return entries
 end
 
@@ -45,10 +58,10 @@ math.randomseed(os.time())
 --Variables--
 -------------
 
-local branch= _G.bottle_branch or "master"
-local repo  = "https://github.com/dangranos/shocky_scripts/raw/"..branch.."/"
-local s     = net.get(repo..'bottles.txt')
-local sc    = net.get(repo..'bottles_'..net.url((channel.name or ""))..'.txt')
+local branch = _G.bottle_branch or "master"
+local repo   = "https://github.com/dangranos/shocky_scripts/raw/"..branch.."/"
+local s      = net.get(repo..'bottles.txt')
+local sc     = net.get(repo..'bottles_'..net.url((channel.name or ""))..'.txt')
 if sc then
     s = s..sc
 end
@@ -76,29 +89,81 @@ if bl ~= "" then
     end
 end
 
--------------
---Arguments--
--------------
+------------
+--Commands--
+------------
+local cmds = {}
+cmds.prefix  = "-"
+cmds.pattern = "[ ]*"..(cmds.prefix).."([a-z0-9A-Z]+)"
+cmds.aliases = {
+    f = "find",
+    h = "help",
+    c = "count",
+    listcommands = "commands",
+}
+cmds.description = {
+    find = "",
+    count = "",
+    help = "",
+    commands = "",
+}
+cmds.reserved = {prefix = 1, pattern = 1, aliases = 1, description = 1, reserved = 1, execute = 1, notfound = 0, check = 1}
+cmds.check = function(argt) --check if there are any commands
+    dprint("Inside of cmds.check()")
+    ret = (true and ((find(argt, cmds.pattern, false))[1] == 1))
+    dprint("Out")
+    return ret
+end
+cmds.notfound = function(cmd) return "Command \""..cmd.."\" not found." end
+cmds.execute = function(argt) --execute commands
+    dprint("Inside of cmds.execute()")
+    local cmd_index = find(argt, cmds.pattern, false)
+    if cmd_index[1] ~= 1 then return false end
+    local cmd_s = string.sub(argt[1],2)
+    local cmd_f = (cmds[cmd_s] or cmds[cmds.aliases[cmd_s]] or cmds.notfound )
+    if cmds.reserved[cmd_s]==1 then cmd_f=notfound end
+    ret = cmd_f(table.remove(argt,1))
+    dprint("Out")
+    return ret
+end
+cmds.find = function(argt)
+    dprint("Inside of cmds.find()")
+    local keywords = table.concat(argt, " ")
+    local entries = find(bottles, keywords)
+    if #entries == 0 then print("Could not find a bottle that matches given keywords (-find)") return end
+    ret = ("Found keyword"..(function() if (#(argt or ({})) - 1) > 0 then return "s" end return "" end)().." \""..keywords.."\" in bottle"..(function() if #entries > 1 then return "s:" else return "" end end)().." "..table.concat(entries,","))
+    dprint("Out")
+    return ret
+end
+cmds.help = function(argt)
+    return ""
+end
+cmds.commands = function()
+    return ("")
+end
+cmds.count = function()
+    dprint("Inside of cmds.count()")
+    return (#bottles.." entr"..(function() if (#bottles == 1) then return "y" else return "ies" end return "" end)().." present")
+end
+
+--------
+--MAIN--
+--------
+
 if argc >= 1 then
-    if string.lower(arg[1]) == "-help" then
+    if cmds.check(arg) then
+        dprint("Checked!")
+        ret = (cmds.execute(arg))
+        if ret then return ret end
+    end
+    --[[if string.lower(arg[1]) == "-help" then
         print("A simple RNG that produces a message in a bottle. Use a positive number for a specific bottle or use keywords to find the first bottle containing the keywords. Use listcommands to list all commands.")
         return
     end
     if string.lower(arg[1]) == "-listcommands" then
         print("help : Displays help prompt | find <keywords> : List bottles containing <keywords> | count : Lists total number of bottles")
         return
-    end
-    if string.lower(arg[1]) == "-count" then
-        print(#bottles.." entr"..(function() if (#bottles == 1) then return "y" else return "ies" end return "" end)().." present")
-        return
-    end
-    if string.lower(arg[1]) == "-find" then
-        local keywords = table.concat(arg, " ", 2)
-        local entries = find(bottles, keywords)
-        if #entries == 0 then print("Could not find a bottle that matches given keywords (-find)") return end
-        print("Found keyword"..(function() if (#(arg or ({})) - 2) > 0 then return "s" end return "" end)().." \""..keywords.."\" in bottle"..(function() if #entries > 1 then return "s:" else return "" end end)().." "..table.concat(entries,","))
-        return
-    end
+    end]]--
     arg1 = tonumber(arg[1])
     if not arg1 and arg[1] then
         local entries = find(bottles, table.concat(arg, " ", 1))
