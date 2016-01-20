@@ -114,7 +114,7 @@ cmds.check = function(argt) --check if there are any commands
     dprint("Out")
     return ret
 end
-cmds.notfound = function(cmd) return "Command \""..cmd.."\" not found." end
+cmds.notfound = function(cmd) return "Command \""..cmd[1].."\" not found." end
 cmds.execute = function(argt) --execute commands
     dprint("Inside of cmds.execute()")
     local cmd_index = find(argt, cmds.pattern, false)
@@ -122,13 +122,13 @@ cmds.execute = function(argt) --execute commands
     local cmd_s = string.sub(argt[1],2)
     local cmd_f = (cmds[cmd_s] or cmds[cmds.aliases[cmd_s]] or cmds.notfound )
     if cmds.reserved[cmd_s]==1 then cmd_f=cmds.notfound end
-    ret = cmd_f(table.remove(argt,1))
+    ret = cmd_f(argt)
     dprint("Out")
     return ret
 end
 cmds.find = function(argt)
     dprint("Inside of cmds.find()")
-    local keywords = table.concat(argt, " ")
+    local keywords = table.concat(argt, " ", 2)
     local entries = find(bottles, keywords)
     if #entries == 0 then return "Could not find a bottle that matches given keywords (-find)" end
     ret = ("Found keyword"..(function() if (#(argt or ({})) - 1) > 0 then return "s" end return "" end)().." \""..keywords.."\" in bottle"..(function() if #entries > 1 then return "s:" else return "" end end)().." "..table.concat(entries,","))
