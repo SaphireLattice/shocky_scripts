@@ -102,10 +102,10 @@ cmds.aliases = {
     listcommands = "commands",
 }
 cmds.description = {
-    find = "",
-    count = "",
-    help = "",
-    commands = "",
+    find = "find <keywords> : List bottles containing <keywords>",
+    count = "count : Lists total number of bottles",
+    help = "help : Displays help prompt",
+  --commands = "",
 }
 cmds.reserved = {prefix = 1, pattern = 1, aliases = 1, description = 1, reserved = 1, execute = 1, notfound = 0, check = 1}
 cmds.check = function(argt) --check if there are any commands
@@ -121,7 +121,7 @@ cmds.execute = function(argt) --execute commands
     if cmd_index[1] ~= 1 then return false end
     local cmd_s = string.sub(argt[1],2)
     local cmd_f = (cmds[cmd_s] or cmds[cmds.aliases[cmd_s]] or cmds.notfound )
-    if cmds.reserved[cmd_s]==1 then cmd_f=notfound end
+    if cmds.reserved[cmd_s]==1 then cmd_f=cmds.notfound end
     ret = cmd_f(table.remove(argt,1))
     dprint("Out")
     return ret
@@ -130,16 +130,20 @@ cmds.find = function(argt)
     dprint("Inside of cmds.find()")
     local keywords = table.concat(argt, " ")
     local entries = find(bottles, keywords)
-    if #entries == 0 then print("Could not find a bottle that matches given keywords (-find)") return end
+    if #entries == 0 then return "Could not find a bottle that matches given keywords (-find)" end
     ret = ("Found keyword"..(function() if (#(argt or ({})) - 1) > 0 then return "s" end return "" end)().." \""..keywords.."\" in bottle"..(function() if #entries > 1 then return "s:" else return "" end end)().." "..table.concat(entries,","))
     dprint("Out")
     return ret
 end
 cmds.help = function(argt)
-    return ""
+    return "A simple RNG that produces a message in a bottle. Use a positive number for a specific bottle or use keywords to find the first bottle containing the keywords. Use listcommands to list all commands."
 end
 cmds.commands = function()
-    return ("")
+    local ret = ""
+    for k,v in pairs(cmds.description) do
+        ret = ret .. v .. " | "
+    end
+    return string.gsub(ret," | $","")
 end
 cmds.count = function()
     dprint("Inside of cmds.count()")
@@ -157,11 +161,11 @@ if argc >= 1 then
         if ret then return ret end
     end
     --[[if string.lower(arg[1]) == "-help" then
-        print("A simple RNG that produces a message in a bottle. Use a positive number for a specific bottle or use keywords to find the first bottle containing the keywords. Use listcommands to list all commands.")
+        print
         return
     end
     if string.lower(arg[1]) == "-listcommands" then
-        print("help : Displays help prompt | find <keywords> : List bottles containing <keywords> | count : Lists total number of bottles")
+        print(" |  | ")
         return
     end]]--
     arg1 = tonumber(arg[1])
