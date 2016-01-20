@@ -5,7 +5,7 @@ _G.bottle_debug_output = ""
 
 local function dprint(...)
     if _G.bottle_debug then
-        _G.bottle_debug_output = table.concat({...}," ")
+         _G.bottle_debug_output = _G.bottle_debug_output .. tostring(table.concat({...}," "))
         print(...)
     end
 end
