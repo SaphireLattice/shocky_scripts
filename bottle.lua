@@ -1,8 +1,16 @@
+arg = arg or {...}
+argc = argc or #arg
+
+-------------
+--Variables--
+-------------
+local branch = _G.bottle_branch or "master"
+local repo   = "https://github.com/dangranos/shocky_scripts/raw/"..branch.."/"
+_G.bottle_debug_output = ""
+
 ------------------
 --Some functions--
 ------------------
-_G.bottle_debug_output = ""
-
 local function dprint(...)
     if _G.bottle_debug then
          _G.bottle_debug_output = _G.bottle_debug_output .. tostring(table.concat({...}," "))
@@ -54,36 +62,56 @@ end
 
 math.randomseed(os.time())
 
--------------
---Variables--
--------------
-
-local branch = _G.bottle_branch or "master"
-local repo   = "https://github.com/dangranos/shocky_scripts/raw/"..branch.."/"
-local s      = net.get(repo..'bottles.txt')
-local sc     = net.get(repo..'bottles_'..net.url((channel.name or ""))..'.txt')
-if sc then
-    s = s..sc
+local function setCache(bottles)
+    for k,v in pairs(bottles) do
+        _G.bottle_cache[k] = v
+    end
+    return true
 end
-local bottles     = split(s,'\n')
-local num     = math.random(1,#bottles)
+
+local function getBottleCount()
+    return #(_G.bottle_cache or {}) or -1
+end
+
+local function getBottle(number)
+    return _G.bottle_cache[number]
+end
+
+local function getBottles()
+    return _G.bottle_cache or {}
+end
+
+-----------------
+--Bottle loader--
+-----------------
+local function loadBottles()
+    local s      = net.get(repo..'bottles.txt')
+    local sc     = net.get(repo..'bottles_'..net.url((channel.name or ""))..'.txt')
+    if sc then
+        s = s..sc
+    end
+    local l_bottles     = split(s,'\n')
+    local l_num     = math.random(1,#bottles)
+    return l_bottles,l_num
+end
 
 ---------------------
 --Blacklist loading--
 ---------------------
-local bl    = net.get(repo.."bottles_blacklist.txt") or ""
-if bl ~= "" then
-    local t_bl  = split(bl,"\n")
-    local t_bl_f = {}
-    for k,v in pairs(t_bl) do
-        local _,_,channel_l,list_l = string.find(v,"(#[a-zA-Z_-]+)[ ]+([0-9,]+)")
-        t_bl_f[channel_l]=split(list_l,",")
-    end
-
-    if t_bl_f[channel.name]~={} and t_bl_f[channel.name]~=nil then
-        for k,v in pairs(t_bl_f[channel.name]) do
-            if (#arg==1) and (type(tonumber(arg[1]))=="number" and tonumber(arg[1])==tonumber(v)) then
-            else bottles[tonumber(v)] = "%user% found a message in a bottle! It says: \"Unfortunately, this bottle is not available in your country because it may contain offensive material not sanctioned by your government.\""
+local function loadBlacklist(l_bottles)
+    local bl    = net.get(repo.."bottles_blacklist.txt") or ""
+    if bl ~= "" then
+        local t_bl  = split(bl,"\n")
+        local t_bl_f = {}
+        for k,v in pairs(t_bl) do
+            local _,_,channel_l,list_l = string.find(v,"(#[a-zA-Z_-]+)[ ]+([0-9,]+)")
+            t_bl_f[channel_l]=split(list_l,",")
+        end
+        if t_bl_f[channel.name]~={} and t_bl_f[channel.name]~=nil then
+            for k,v in pairs(t_bl_f[channel.name]) do
+                if (#arg==1) and (type(tonumber(arg[1]))=="number" and tonumber(arg[1])==tonumber(v)) then
+                else l_bottles[tonumber(v)] = "%user% found a message in a bottle! It says: \"Unfortunately, this bottle is not available in your country because it may contain offensive material not sanctioned by your government.\""
+                end
             end
         end
     end
@@ -155,31 +183,30 @@ end
 --MAIN--
 --------
 
+if getBottleCount() == -1 then
+    local bottles = loadBottles()
+    loadBlacklst(bottles)
+    setCache(bottles)
+    print("Cache set!")
+end
+
 if argc >= 1 then
     if cmds.check(arg) then
         dprint("Checked!")
         ret = (cmds.execute(arg))
         if ret then return ret end
     end
-    --[[if string.lower(arg[1]) == "-help" then
-        print
-        return
-    end
-    if string.lower(arg[1]) == "-listcommands" then
-        print(" |  | ")
-        return
-    end]]--
     arg1 = tonumber(arg[1])
     if not arg1 and arg[1] then
-        local entries = find(bottles, table.concat(arg, " ", 1))
+        local entries = find(getBottles(), table.concat(arg, " ", 1))
         if #entries == 0 then print("Could not find a bottle that matches give keywords") return end
         num = tonumber(entries[math.random(#entries)])
     elseif arg1 then
-        if (arg1 < (0-#bottles)) or (arg1 > #bottles) then
+        if (arg1 < (0-getBottleCount())) or (arg1 > getBottleCount()) then
             print("Can not find a bottle with entry number: " .. tostring(arg1))
             return
         elseif arg1<0 then
-            num = #bottles + 1 + arg1
+            num = getBottleCount() + 1 + arg1
         elseif arg1>0 then
             num = arg1
         else
@@ -188,6 +215,9 @@ if argc >= 1 then
 end
 
 if not arg[1] then
-    bottles = shuffle(bottles)
+    bottles = shuffle(getBottles())
+    print(bottles[num])
+    return
 end
-print(bottles[num])
+
+print(getBottle(num))
