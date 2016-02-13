@@ -1,6 +1,31 @@
 arg = arg or {...}
 argc = argc or #arg
 
+---------------------
+--Shocky-less debug--
+---------------------
+
+if not factoid then
+    net = {}
+    channel = {}
+    channel.name = "#debug"
+    function net.get(str)
+        if string.find(str,"bottles.txt") then
+            return table.concat({
+                "This should not appear!",
+                "This should not appear!",
+                "This should not appear!",
+                "This should not appear!",
+                "This should not appear!",
+            },"\n")
+        end
+        return nil
+    end
+    function net.url(str)
+        return str
+    end
+end
+
 -------------
 --Variables--
 -------------
@@ -63,6 +88,7 @@ end
 math.randomseed(os.time())
 
 local function setCache(bottles)
+    _G.bottle_cache={}
     for k,v in pairs(bottles) do
         _G.bottle_cache[k] = v
     end
@@ -70,7 +96,8 @@ local function setCache(bottles)
 end
 
 local function getBottleCount()
-    return #(_G.bottle_cache or {}) or -1
+    local t=(_G.bottle_cache or {})
+    return (#t>0 and #t) or -1
 end
 
 local function getBottle(number)
@@ -91,8 +118,7 @@ local function loadBottles()
         s = s..sc
     end
     local l_bottles     = split(s,'\n')
-    local l_num     = math.random(1,#bottles)
-    return l_bottles,l_num
+    return l_bottles,#l_bottles
 end
 
 ---------------------
@@ -142,7 +168,7 @@ cmds.check = function(argt) --check if there are any commands
     dprint("Out")
     return ret
 end
-cmds.notfound = function(cmd) return "Command \""..cmd[1].."\" not found." end
+cmds.notfound = function(argt, cmd) return "Command \""..cmd.."\" not found." end
 cmds.execute = function(argt) --execute commands
     dprint("Inside of cmds.execute()")
     local cmd_index = find(argt, cmds.pattern, false)
@@ -151,14 +177,14 @@ cmds.execute = function(argt) --execute commands
     local cmd_f = (cmds[cmd_s] or cmds[cmds.aliases[cmd_s]] or cmds.notfound )
     if cmds.reserved[cmd_s]==1 then cmd_f=cmds.notfound end
     table.remove(argt,1)
-    ret = cmd_f(argt)
+    ret = cmd_f(argt,cmd_s)
     dprint("Out")
     return ret
 end
 cmds.find = function(argt)
     dprint("Inside of cmds.find()")
     local keywords = table.concat(argt, " ")
-    local entries = find(bottles, keywords)
+    local entries = find(getBottles(), keywords)
     if #entries == 0 then return "Could not find a bottle that matches given keywords (-find)" end
     ret = ("Found keyword"..(function() if (#(argt or ({})) - 1) > 0 then return "s" end return "" end)().." \""..keywords.."\" in bottle"..(function() if #entries > 1 then return "s:" else return "" end end)().." "..table.concat(entries,","))
     dprint("Out")
@@ -176,7 +202,7 @@ cmds.commands = function()
 end
 cmds.count = function()
     dprint("Inside of cmds.count()")
-    return (#bottles.." entr"..(function() if (#bottles == 1) then return "y" else return "ies" end return "" end)().." present")
+    return (#getBottleCount().." entr"..(function() if (getBottleCount() == 1) then return "y" else return "ies" end return "" end)().." present")
 end
 
 --------
@@ -184,10 +210,10 @@ end
 --------
 
 if getBottleCount() == -1 then
-    local bottles = loadBottles()
-    loadBlacklst(bottles)
+    local bottles,num = loadBottles()
+    loadBlacklist(bottles)
     setCache(bottles)
-    print("Cache set!")
+    print("Cache set! Loaded "..tostring(getBottleCount())..":"..tostring(num).." entries.")
 end
 
 if argc >= 1 then
@@ -215,6 +241,7 @@ if argc >= 1 then
 end
 
 if not arg[1] then
+    num = math.random(1,getBottleCount())
     bottles = shuffle(getBottles())
     print(bottles[num])
     return
