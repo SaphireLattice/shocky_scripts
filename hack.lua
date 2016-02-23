@@ -88,7 +88,14 @@ base.hack = {
     v_forms = { "verb",   "verbs",   "verbed",   "verber",   "verbing"   },
     tokens  = { "hack",   "hacks",   "hacked",   "hacker",   "hacking"   },
     getter  = function(form)
-        return "<"..base.hack.v_forms[base.hack.forms[form] or 1]..">"
+        return "<"..base.hack.v_forms[base.hack.forms[form] or 1].."> <hack_object>"
+    end
+}
+
+base.hacker = {
+    basic   = false,
+    getter  = function()
+        return "<hack_obect>".."<verber>"
     end
 }
 
@@ -226,7 +233,7 @@ for k,v in pairs(base) do
 end
 
 function parse(text)
-    text = string.gsub(text, ch[1].."([a-zA-Z]+)"..ch[2],
+    text = string.gsub(text, ch[1].."([a-z_A-Z]+)"..ch[2],
     function(token)
         return ((tags[token]~=nil and tags[token]) or (function(t) return "?"..t.."?" end))(token)
     end)
@@ -235,7 +242,7 @@ end
 
 ret = args
 
-while (string.find(ret, ch[1].."([a-zA-Z]+)"..ch[2])) do
+while (string.find(ret, ch[1].."([a-z_A-Z]+)"..ch[2])) do
     ret = parse(ret)
 end
 
