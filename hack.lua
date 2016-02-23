@@ -237,7 +237,6 @@ ret = args
 
 while (string.find(ret, ch[1].."([a-zA-Z]+)"..ch[2])) do
     ret = parse(ret)
-    print(ret)
 end
 
 
