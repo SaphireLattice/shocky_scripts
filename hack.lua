@@ -243,4 +243,4 @@ end
 ret = string.gsub(ret, "([aA])%(([nN])%) ([AEFHILMNOURSXaefhilmnoursx])", "%1%2 %3")
 ret = string.gsub(ret, "([aA])%([nN]%) ", "%1 ")
 
-return (string.sub(ret,1,1)):upper()..string.sub(ret,2)
+print((string.sub(ret,1,1)):upper()..string.sub(ret,2))
