@@ -247,7 +247,7 @@ while (string.find(ret, ch[1].."([a-z_A-Z]+)"..ch[2])) do
 end
 
 
-ret = string.gsub(ret, "([aA])%(([nN])%) ([AEFHILMNOURSXaefhilmnoursx])", "%1%2 %3")
+ret = string.gsub(ret, "([aA])%(([nN])%) ([AEIOUHaeiouh])", "%1%2 %3")
 ret = string.gsub(ret, "([aA])%([nN]%) ", "%1 ")
 
 print((string.sub(ret,1,1)):upper()..string.sub(ret,2))
