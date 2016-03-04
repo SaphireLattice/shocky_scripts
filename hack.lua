@@ -1,7 +1,35 @@
 arg = arg or {...}
 args = (args~="" and args) or (#arg>0 and table.concat(arg," ")) or "<advice>"
 
+if not factoid then
+    factoid = {}
+    setmetatable(factoid, {__index=function(t,k) return function() return k end end})
+end
+
 math.randomseed(math.random()+os.time()+os.clock()) --because why not?
+
+local function split(str, pat)
+    local t = {}
+    local fpat = "(.-)" .. pat
+    local last_end = 1
+    local s, e, cap = str:find(fpat, 1)
+    while s do
+        if s ~= 1 or cap ~= "" then
+            table.insert(t,cap)
+        end
+        last_end = e+1
+        s, e, cap = str:find(fpat, last_end)
+    end
+    if last_end <= #str then
+        cap = str:sub(last_end)
+        table.insert(t, cap)
+    end
+    return t
+end
+
+------------------
+--Token handlers--
+------------------
 
 ch = {"<",">"} --token chars
 
@@ -80,6 +108,16 @@ base.verb = {
         { 'query', 'queries', 'queried', 'querier', 'querying' },
     },
 
+}
+
+base.factoid = {
+    basic   = false,
+    tokens  = {"f", "factoid"},
+    getter = function(token, ...)
+        local t = {...}
+        if #t==0 then return "!"..token..":no argument!" end
+        return factoid[table.remove(t,1)](unpack(t))
+    end
 }
 
 base.hack = {
@@ -214,7 +252,7 @@ base.advice = {
     'Sounds like you need a(n) <tool>. <person> wrote one for <service>.',
 }
 
-function basic_getter(tbl)
+local function basic_getter(tbl)
     return function()
         return tbl[math.random(1,#tbl)]
     end
@@ -222,7 +260,7 @@ end
 
 tags = {} --ties <tag> to respective getter
 
-function multi_token(getter,tokens)
+local function multi_token(getter,tokens)
     for k,v in pairs(tokens) do
         tags[v] = getter
     end
@@ -232,17 +270,19 @@ for k,v in pairs(base) do
     multi_token((v.basic~=true and v.getter) or basic_getter(v), (v.basic~=true and v.tokens ) or {k})
 end
 
-function parse(text)
-    text = string.gsub(text, ch[1].."([a-z_A-Z]+)"..ch[2],
+local function parse(text)
+    text = string.gsub(text, ch[1].."([^"..ch[2].."]+)"..ch[2],
     function(token)
-        return ((tags[token]~=nil and tags[token]) or (function(t) return "?"..t.."?" end))(token)
+        local arguments = split(token,":")
+        token = table.remove(arguments,1)
+        return ((tags[token]~=nil and tags[token]) or (function(t) return "?"..t.."?" end))(token, unpack(arguments))
     end)
     return text
 end
 
 ret = args
 
-while (string.find(ret, ch[1].."([a-z_A-Z]+)"..ch[2])) do
+while (string.find(ret, ch[1].."([^"..ch[2].."]+)"..ch[2])) do
     ret = parse(ret)
 end
 
