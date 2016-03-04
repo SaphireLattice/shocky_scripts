@@ -3,7 +3,7 @@ args = (args~="" and args) or (#arg>0 and table.concat(arg," ")) or "<advice>"
 
 if not factoid then
     factoid = {}
-    setmetatable(factoid, {__index=function(t,k) return function() return k end end})
+    setmetatable(factoid, {__index=function(t,k) if k=="nosuchfactoid" then return function() return nil end end return function() return k end end})
 end
 
 math.randomseed(math.random()+os.time()+os.clock()) --because why not?
@@ -116,7 +116,7 @@ base.factoid = {
     getter = function(token, ...)
         local t = {...}
         if #t==0 then return "!"..token..":no argument!" end
-        return factoid[table.remove(t,1)](unpack(t))
+        return factoid[table.remove(t,1)](unpack(t)) or "!"..token..":no such factoid!"
     end
 }
 
@@ -275,7 +275,7 @@ local function parse(text)
     function(token)
         local arguments = split(token,":")
         token = table.remove(arguments,1)
-        return ((tags[token]~=nil and tags[token]) or (function(t) return "?"..t.."?" end))(token, unpack(arguments))
+        return ((tags[token]~=nil and tags[token]) or (function(t) return "?"..t.."?" end))(token, unpack(arguments)) or "!"..token..":nil!"
     end)
     return text
 end
