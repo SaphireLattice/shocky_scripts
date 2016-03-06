@@ -131,7 +131,7 @@ end
     -- Main code --
 ---- Loading data ----
 
-local url_base = "https://raw.githubusercontent.com/dangranos/shocky_scripts/raw/master/"
+local url_base = "https://raw.githubusercontent.com/dangranos/shocky_scripts/master/"
 local data_file = "hack_data.lua"
 local data
 factoid = factoid or {} -- Must be global because factoid token handler uses it
