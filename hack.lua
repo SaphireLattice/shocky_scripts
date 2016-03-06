@@ -1,6 +1,6 @@
     --Variables--
-local arg  = {...}
-local args = table.concat(arg," ")
+local arg = arg or {...}
+local args = (args~="" and args) or (#arg>0 and table.concat(arg," ")) or "<advice>"
 
 math.randomseed(math.random()+os.time()+os.clock())
 
@@ -155,6 +155,10 @@ addGetters(data)
 
 local ret = parse(args)
 ret = string.upper(ret:sub(1,1))..ret:sub(2)
-if not shocky then print(ret) else return ret end
+
+ret = string.gsub(ret, "([aA])%(([nN])%) ([AEIOUHaeiouh])", "%1%2 %3") -- This should be replaced with real code that proerly replaces "a(n)" to "a" or "an"
+ret = string.gsub(ret, "([aA])%([nN]%) ", "%1 ")
+
+print(ret)
     
     -- The End --
