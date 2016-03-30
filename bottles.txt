@@ -367,5 +367,13 @@ $flip($reverse(%user% found a message in a bottle! It says: "Hello from down und
 %user% found a message in a bottle! It says: "They are here." 
 %user% found a message in a bottle! It says: "Today is a great day for asking your boss for a promotion, sharing your feelings with that person you've been interested in, or trying a new hobby! Unfortunately, it is a terrible day for getting that promotion, having that person say yes, or not injuring yourself horribly on a power sander."
 %user% found a message in a bottle! It smells vaguely of french toast. You lose consciousness and die. 
-%user% found a message in a bottle! It says: "You are awaited in Valhalla"
+%user% found a message in a bottle! It says: "You are awaited in Valhalla."
 %user% found a message in a bottle! When you open it, you see a vision of yourself as an old person, looking back fondly on the past that is your now.
+%user% found a message in a bottle! It says: "Roll D20 for $rnd(Str,Dex,Con,Int,Wis,Cha)."
+%user% found a message in a bottle! It says: "The dog park will not harm you."
+%user% found a message in a bottle! It says: "C-C-C-COMBOBREAKER!!!"
+%user% found a message in a bottle! It says: "You found a message in a bottle! It says: 'You found a message in a bottle! It says:...'"
+%user% found a message in a bottle! It says: "None of this is real. You are actually in an IRC chatroom. You need to wake up. WAKE UP!"
+%user% found a message in a bottle! It says: "This message is not available in your country."
+%user% found a message in a bottle! It says: "I accidentally a message in a bottle."
+%user% found a message in a bottle! It says: "tl;dr You'll die." You die.
