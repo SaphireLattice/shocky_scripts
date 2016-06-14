@@ -138,7 +138,9 @@ factoid = factoid or {} -- Must be global because factoid token handler uses it
 if shocky then data = _G.hack_cache or (function()
         local ldata = net.get(url_base .. data_file)
         local f = assert(loadstring(ldata))
-        return f()
+        _G.hack_cache = f()
+        print("Cache loaded!")
+        return _G.hack_cache
     end)()
 -- To debug the script without spamming commits to test this on Shocky
 else
