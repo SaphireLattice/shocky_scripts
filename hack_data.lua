@@ -211,7 +211,7 @@ base.factoid = {
     tokens  = {"f", "factoid"},
     getter = function(_, token, f_name, ...)
         local t = {...}
-        if #t==0 then return "!"..f_name..":no argument!" end
+        if f_name==nil or f_name=="" then return "!f:no factoid name!" end
         return factoid[f_name](...) or "!"..f_name..":no such factoid!"
     end
 }
