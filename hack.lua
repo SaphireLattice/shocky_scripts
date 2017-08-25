@@ -161,8 +161,9 @@ end
 local function loadCache(data)
     if _G.hack_cache == nil or _G.hack_cache.getters == nil then
         print("Missing cache.")
-        _G.hack_cache = {}
+        _G.hack_cache = _G.hack_cache or {}
         loadNamespace(data)
+        _G.hack_cache.getters = getters
         return
     end
     getters = _G.hack_cache.getters
