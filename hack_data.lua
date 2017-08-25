@@ -1,6 +1,9 @@
-base = {}
+-- Global namespace
+base = {namespace = true}
+-- Hacking tokens namespace
+hack = {namespace = true}
 
-base.noun = {
+hack.noun = {
     basic = true,
     'TCP', 'IP', 'UDP', 'BGP', 'DNS', 'ARP spoof', 'ARP', 'JavaScript',
     'HTML', 'CSS', 'XML', 'SOAP', 'REST', 'SSL', 'socket', 'BSD', 'linux',
@@ -13,15 +16,13 @@ base.noun = {
     'GNU/<noun>',
 }
 
-base.verb = {
+hack.verb = {
     basic = false,
     forms =  { verb = 1, verbs = 2, verbed = 3, verber = 4, verbing = 5   },
     tokens = {"verb",   "verbs",   "verbed",   "verber",   "verbing"    },
-    getter = function(form)
-        if not tonumber(form) then
-            form = base.verb.forms[form] or 1
-        end
-        entry = base.verb.entries[math.random(1,#base.verb.entries)]
+    getter = function(token, form)
+        form = token.forms[form] or 1
+        entry = token.entries[math.random(1,#token.entries)]
         if form~=1 then
             form_s = entry[form]
             if string.sub(form_s,1,1) == "-" then
@@ -75,40 +76,24 @@ base.verb = {
 
 }
 
-base.factoid = {
-    basic   = false,
-    tokens  = {"f", "factoid"},
-    getter = function(token, ...)
-        local t = {...}
-        if #t==0 then return "!"..token..":no argument!" end
-        return factoid[table.remove(t,1)](unpack(t)) or "!"..token..":no such factoid!"
-    end
-}
-
-base.hack = {
+hack.hack = {
     basic   = false,
     forms   = { hack = 1, hacks = 2, hacked = 3, hacker = 4, hacking = 5 }, -- Dirty but it works *shrug*
     v_forms = { "verb",   "verbs",   "verbed",   "verber",   "verbing"   },
     tokens  = { "hack",   "hacks",   "hacked",   "hacker",   "hacking"   },
-    getter  = function(form)
-        return "<"..base.hack.v_forms[base.hack.forms[form] or 1].."> <hack_object>"
+    getter  = function(token, form)
+        if form == "verber" then return "<hack_obect>".."<verber>" end
+        return "<"..token.v_forms[token.forms[form] or 1].."> <hack_object>"
     end
 }
 
-base.hacker = {
-    basic   = false,
-    getter  = function()
-        return "<hack_obect>".."<verber>"
-    end
-}
-
-base.service = {
+hack.service = {
     basic = true,
     'Google', 'Amazon', 'Stack Overflow', 'Freenode', 'EFnet', 'Usenet',
     'this old GeoCities page', 'my website', '<person>\'s website',
 }
 
-base.hack_object = {
+hack.hack_object = {
     basic = true,
     'the <noun>', 'a(n) <noun>', 'the victim\'s <noun>', 'some <noun>',
     'a(n) <verber> from <service>', '<service>\'s <noun>',
@@ -116,7 +101,7 @@ base.hack_object = {
     'a pre-<verbed> <verber>',
 }
 
-base.tool = {
+hack.tool = {
     basic = true,
     '<noun> <verber>',
     '<verbed> <noun>',
@@ -133,7 +118,7 @@ base.tool = {
     '<verber>-<verber> hybrid',
 }
 
-base.tools = {
+hack.tools = {
     basic = true,
     '<noun> <verber>s',
     '<verbed> <nouns>',
@@ -143,7 +128,7 @@ base.tools = {
     'pre-<noun> <verber>s',
 }
 
-base.person = {
+hack.person = {
     basic = true,
     'Linus Torvalds',
     'Alan Cox',
@@ -163,19 +148,19 @@ base.person = {
     'Sabu',
 }
 
-base.system = {
+hack.system = {
     basic = true,
     'Amiga', 'C-64', 'IBM PC', 'Z80', 'VAX', 'the PDP-8',
 }
 
-base.time = {
+hack.time = {
     basic = true,
     'way back', 'a few years ago', 'in the early 90\'s I think',
     'when everybody had a(n) <verber>',
     'before anybody knew who <person> was',
 }
 
-base.advice = {
+hack.advice = {
     basic = true,
     'Try <hacking>.',
     'Did you <hack> first?',
@@ -215,6 +200,20 @@ base.advice = {
     'Simple <tools> cannot <hack>. You need a good, solid <tool>.',
     'I had a(n) <tool> for <system> <time>.',
     'Sounds like you need a(n) <tool>. <person> wrote one for <service>.',
+}
+
+-- End of hacking tokens namespace
+
+base.default = { basic = true, "<hack.advice>" }
+base.hack = hack
+base.factoid = {
+    basic   = false,
+    tokens  = {"f", "factoid"},
+    getter = function(_, token, f_name, ...)
+        local t = {...}
+        if #t==0 then return "!"..f_name..":no argument!" end
+        return factoid[f_name](...) or "!"..f_name..":no such factoid!"
+    end
 }
 
 return base
