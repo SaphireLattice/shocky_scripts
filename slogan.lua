@@ -1,6 +1,6 @@
-
 arg = arg or {...}
 argc = argc or #arg
+args = args or table.concat(arg, " ")
 
 ---------------------
 --Shocky-less debug--
@@ -117,7 +117,7 @@ local function getSloganCount()
 end
 
 local function getSlogan(number, tbl)
-    return (((tbl or _G.slogan_cache)[number]):gsub("[Ss][Oo][Mm][Ee][Tt][Hh][Ii][Nn][Gg]", "%%ioru%%"))
+    return (((tbl or _G.slogan_cache)[number]):gsub("[Ss][Oo][Mm][Ee][Tt][Hh][Ii][Nn][Gg]", args))
 end
 
 local function getSlogans()
