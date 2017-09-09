@@ -1,3 +1,6 @@
+-- The code is literally a copy of bottle.lua
+-- This should be merged into one "system" actually...
+
 arg = arg or {...}
 argc = argc or #arg
 args = args or table.concat(arg, " ")
@@ -14,13 +17,6 @@ if not factoid then
     channel.name = "#debug"
     function net.get(str)
         if string.find(str,"slogans.txt") then
-            --[[return table.concat({
-                "Shouldn't appear! A Something!",
-                "Shouldn't appear! Another Something!",
-                "Shouldn't appear! Totally not something!",
-                "Shouldn't appear! Hmmmm, a Something?!",
-                "This should not appear! Also Something.",
-            },"\n")]]--
             local f = io.open("slogans.txt", "r")
             local str = f:read("*a")
             f:close()
@@ -250,6 +246,7 @@ if argc >= 1 then
             num = arg1
         else
         end
+        args = table.concant(arg, " ", 2)
     end
 end
 
