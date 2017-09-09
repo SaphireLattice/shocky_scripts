@@ -113,7 +113,7 @@ local function getSloganCount()
 end
 
 local function getSlogan(number, tbl)
-    return (((tbl or _G.slogan_cache)[number]):gsub("[Ss][Oo][Mm][Ee][Tt][Hh][Ii][Nn][Gg]", args))
+    return "%user% Sloganates(tm): "..(((tbl or _G.slogan_cache)[number]):gsub("[Ss][Oo][Mm][Ee][Tt][Hh][Ii][Nn][Gg]", args))
 end
 
 local function getSlogans()
@@ -251,7 +251,7 @@ if argc >= 1 then
 end
 
 if args == "" then
-    args = "%%sender%%"
+    args = "%%user%%"
 end
 
 if not arg1 then
