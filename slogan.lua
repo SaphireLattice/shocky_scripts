@@ -250,6 +250,10 @@ if argc >= 1 then
     end
 end
 
+if args == "" then
+    args = "%%sender%%"
+end
+
 if not arg1 then
     num = math.random(1,getSloganCount())
     slogans = shuffle(getSlogans())
